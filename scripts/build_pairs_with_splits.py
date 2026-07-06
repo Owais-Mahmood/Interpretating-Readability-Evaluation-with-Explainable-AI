@@ -18,7 +18,6 @@ from pathlib import Path
 
 import pandas as pd
 
-
 # 0. Paths
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
@@ -73,9 +72,7 @@ def resolve_token_operation(link_labels):
     return link_labels[0]
 
 def main():
-    
     # 1. Load the two "table" sources
-    
     sentence_level = pd.read_csv(
         SENTENCE_LEVEL_DIR / "all_languages_sentence_strategy_alignment.csv",
         encoding="utf-8-sig",
@@ -90,9 +87,9 @@ def main():
     # 2. Build a crosswalk: sentence_alignment_id -> pair_id
     #    (these two files use different ID schemes, so we join on the
     #    text itself, which is guaranteed unique per pair)
-    
+
     crosswalk = sentence_level[
-        ["sentence_alignment_id", "language_code", "source_text", "target_text"]
+        ["sentence_alignment_id", "language_code", "document_id", "source_text", "target_text"]
     ].merge(
         template[["pair_id", "language", "source_text", "target_text"]],
         left_on=["language_code", "source_text", "target_text"],
@@ -108,7 +105,6 @@ def main():
     id_map = crosswalk.set_index("sentence_alignment_id")["pair_id"].to_dict()
 
     # 3. Base pair table: template columns + sentence-level numeric columns
-
     sentence_level_numeric = sentence_level.merge(
         crosswalk[["sentence_alignment_id", "pair_id"]],
         on="sentence_alignment_id",
@@ -134,8 +130,16 @@ def main():
 
     pairs = template.merge(sentence_level_numeric, on="pair_id", how="left")
 
-    # 4. Token / operation lists, derived from the word-level files
+    # The template's own `document_id` column is actually just the raw corpus
+    # filename (identical for every pair in a collection) rather than a real
+    # per-document identifier. The sentence-level file's `document_id` is the
+    # correct, finer-grained one (e.g. real multi-sentence documents for the
+    # iDEM collections), so we overwrite it here.
+    
+    document_id_map = crosswalk.set_index("pair_id")["document_id"].to_dict()
+    pairs["document_id"] = pairs["pair_id"].map(document_id_map)
 
+    # 4. Token / operation lists, derived from the word-level files
     source_tokens_by_pair = {}
     source_ops_by_pair = {}
     target_tokens_by_pair = {}
@@ -197,7 +201,6 @@ def main():
     )
 
     # 5. Sanity checks before saving
-
     n_missing_tokens = pairs["source_tokens"].isna().sum()
     if n_missing_tokens:
         print(
@@ -209,7 +212,6 @@ def main():
     print("Columns:", list(pairs.columns))
 
     # 6. Save
-
     out_path = OUTPUT_DIR / "pairs_with_splits.csv"
     pairs.to_csv(out_path, index=False)
     print(f"Saved to {out_path}")

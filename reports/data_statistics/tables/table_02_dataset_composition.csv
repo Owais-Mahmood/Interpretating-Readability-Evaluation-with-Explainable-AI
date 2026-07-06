@@ -1,0 +1,17 @@
+dimension,value,n_pairs,pct
+language,ar,399,20.67
+language,ca,380,19.69
+language,es,362,18.76
+language,it,343,17.77
+language,fr,258,13.37
+language,en,188,9.74
+collection,ar,399,20.67
+collection,ca,380,19.69
+collection,es,362,18.76
+collection,it,320,16.58
+collection,fr,258,13.37
+collection,en,188,9.74
+collection,it_carlo,23,1.19
+split,train,1352,70.05
+split,test,292,15.13
+split,validation,286,14.82

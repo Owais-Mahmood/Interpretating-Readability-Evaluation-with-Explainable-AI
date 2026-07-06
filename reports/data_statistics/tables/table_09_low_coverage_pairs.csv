@@ -1,0 +1,7 @@
+threshold,side,n_pairs_below,pct_pairs_below
+50,source,124,6.42
+50,target,173,8.96
+70,source,592,30.67
+70,target,634,32.85
+90,source,1361,70.52
+90,target,1176,60.93

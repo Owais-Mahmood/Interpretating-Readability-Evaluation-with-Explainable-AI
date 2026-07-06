@@ -79,9 +79,9 @@ def main():
     #    (same join used in build_pairs_with_splits.py)
 
     crosswalk = sentence_level[
-        ["sentence_alignment_id", "language_code", "source_text", "target_text"]
+        ["sentence_alignment_id", "language_code", "document_id", "source_text", "target_text"]
     ].merge(
-        template[["pair_id", "language", "collection", "document_id", "source_text", "target_text"]],
+        template[["pair_id", "language", "collection", "source_text", "target_text"]],
         left_on=["language_code", "source_text", "target_text"],
         right_on=["language", "source_text", "target_text"],
         how="inner",
@@ -93,6 +93,10 @@ def main():
     )
 
     id_map = crosswalk.set_index("sentence_alignment_id")["pair_id"].to_dict()
+    
+    # Note: document_id here comes from the sentence-level file, not the
+    # template — the template's document_id is just the raw corpus filename
+    # (one value per whole collection), not a real per-document identifier.
     pair_context = crosswalk.set_index("pair_id")[["language", "collection", "document_id"]]
 
     # 3. Build the long source-token table, one language at a time
