@@ -1,0 +1,5 @@
+split,n_pairs,n_languages,n_documents,n_source_token_rows,n_classifier_instances
+test,292,6,15,7266,584
+train,1352,6,28,34093,2704
+validation,286,6,16,7869,572
+all,1930,6,51,49228,3860
