@@ -1,0 +1,28 @@
+{
+  "spacy_version": "3.8.14",
+  "spacy_udpipe_version": "1.0.0",
+  "execution_date": "2026-07-07T18:16:34.437924",
+  "languages": {
+    "ar": {
+      "model_path": "/usr/local/python/3.12.1/lib/python3.12/site-packages/spacy_udpipe/models/arabic-padt-ud-2.5-191206.udpipe"
+    },
+    "ca": {
+      "model_path": "/usr/local/python/3.12.1/lib/python3.12/site-packages/spacy_udpipe/models/catalan-ancora-ud-2.5-191206.udpipe"
+    },
+    "en": {
+      "model_path": "/usr/local/python/3.12.1/lib/python3.12/site-packages/spacy_udpipe/models/english-ewt-ud-2.5-191206.udpipe"
+    },
+    "es": {
+      "model_path": "/usr/local/python/3.12.1/lib/python3.12/site-packages/spacy_udpipe/models/spanish-ancora-ud-2.5-191206.udpipe"
+    },
+    "fr": {
+      "model_path": "/usr/local/python/3.12.1/lib/python3.12/site-packages/spacy_udpipe/models/french-gsd-ud-2.5-191206.udpipe"
+    },
+    "it": {
+      "model_path": "/usr/local/python/3.12.1/lib/python3.12/site-packages/spacy_udpipe/models/italian-isdt-ud-2.5-191206.udpipe"
+    }
+  },
+  "n_sentences_attempted": 3860,
+  "n_tokens_annotated": 100196,
+  "n_failures": 0
+}

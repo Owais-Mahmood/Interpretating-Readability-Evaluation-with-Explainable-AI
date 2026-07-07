@@ -1,0 +1,11 @@
+check,result,bad_values
+unique_pair_id,True,
+pair_id_coverage_in_template,True,
+Omission_binary_values_only,True,
+Compression_binary_values_only,True,
+Explanation_binary_values_only,True,
+Syntactic_Changes_binary_values_only,True,
+Substitution_binary_values_only,True,
+Transposition_binary_values_only,True,
+Modulation_binary_values_only,True,
+Transcription_binary_values_only,True,

@@ -1,0 +1,14 @@
+group,n_annotated,n_total,pct_annotated,dimension
+ar,0,399,0.0,language
+ca,0,380,0.0,language
+en,0,188,0.0,language
+es,0,362,0.0,language
+fr,0,258,0.0,language
+it,0,343,0.0,language
+ar,0,399,0.0,collection
+ca,0,380,0.0,collection
+en,0,188,0.0,collection
+es,0,362,0.0,collection
+fr,0,258,0.0,collection
+it,0,320,0.0,collection
+it_carlo,0,23,0.0,collection

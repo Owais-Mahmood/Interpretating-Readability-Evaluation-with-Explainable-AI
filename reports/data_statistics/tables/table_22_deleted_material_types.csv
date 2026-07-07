@@ -1,0 +1,74 @@
+linguistic_type,n_tokens,pct,language
+Function/grammatical material,4287,31.631373127720803,all
+Other nominal information,2062,15.21434368774441,all
+Modifier/detail,1709,12.609754297941414,all
+Core participant/argument,1474,10.875820851471998,all
+Predicate,1426,10.521655721980373,all
+Punctuation,1177,8.684424112742565,all
+Named entity or proper name,570,4.2057109127130525,all
+Discourse marker or connective,423,3.1210802036449494,all
+Other/unknown,239,1.763447207260385,all
+Number/date,158,1.1657935512432671,all
+Negation,28,0.2065963255367815,all
+Core participant/argument,321,14.738292011019285,ar
+Discourse marker or connective,36,1.6528925619834711,ar
+Function/grammatical material,422,19.375573921028465,ar
+Modifier/detail,367,16.850321395775943,ar
+Number/date,5,0.2295684113865932,ar
+Other nominal information,391,17.95224977043159,ar
+Other/unknown,74,3.3976124885215793,ar
+Predicate,268,12.304866850321396,ar
+Punctuation,294,13.49862258953168,ar
+Core participant/argument,249,8.565531475748195,ca
+Discourse marker or connective,97,3.3367733058135536,ca
+Function/grammatical material,1011,34.7781217750258,ca
+Modifier/detail,372,12.796697626418988,ca
+Named entity or proper name,141,4.8503611971104235,ca
+Negation,16,0.5503955968352253,ca
+Number/date,24,0.8255933952528379,ca
+Other nominal information,475,16.33986928104575,ca
+Other/unknown,38,1.3071895424836601,ca
+Predicate,246,8.46233230134159,ca
+Punctuation,238,8.187134502923977,ca
+Core participant/argument,82,11.468531468531468,en
+Discourse marker or connective,22,3.076923076923077,en
+Function/grammatical material,191,26.713286713286713,en
+Modifier/detail,64,8.951048951048952,en
+Named entity or proper name,57,7.972027972027972,en
+Number/date,17,2.3776223776223775,en
+Other nominal information,95,13.286713286713287,en
+Other/unknown,22,3.076923076923077,en
+Predicate,120,16.783216783216783,en
+Punctuation,45,6.293706293706293,en
+Core participant/argument,378,10.36468330134357,es
+Discourse marker or connective,120,3.290375651220181,es
+Function/grammatical material,1288,35.31669865642994,es
+Modifier/detail,380,10.419522895530573,es
+Named entity or proper name,259,7.1017274472168905,es
+Negation,11,0.3016177680285166,es
+Number/date,54,1.4806690430490814,es
+Other nominal information,505,13.846997532218262,es
+Other/unknown,37,1.0145324924595558,es
+Predicate,309,8.472717301891967,es
+Punctuation,306,8.390457910611461,es
+Core participant/argument,68,8.553459119496855,fr
+Discourse marker or connective,27,3.3962264150943398,fr
+Function/grammatical material,258,32.45283018867924,fr
+Modifier/detail,95,11.949685534591195,fr
+Named entity or proper name,36,4.528301886792453,fr
+Negation,1,0.12578616352201258,fr
+Number/date,15,1.8867924528301887,fr
+Other nominal information,139,17.48427672955975,fr
+Other/unknown,12,1.509433962264151,fr
+Predicate,83,10.440251572327044,fr
+Punctuation,61,7.672955974842767,fr
+Core participant/argument,376,11.356085774690426,it
+Discourse marker or connective,121,3.654485049833887,it
+Function/grammatical material,1117,33.73603141045002,it
+Modifier/detail,431,13.017215342796739,it
+Named entity or proper name,77,2.3255813953488373,it
+Number/date,43,1.2987012987012987,it
+Other nominal information,457,13.802476593174267,it
+Other/unknown,56,1.6913319238900635,it
+Predicate,400,12.080942313500453,it
+Punctuation,233,7.0371488976140135,it

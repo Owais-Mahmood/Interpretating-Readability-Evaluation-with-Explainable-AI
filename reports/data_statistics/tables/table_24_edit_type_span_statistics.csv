@@ -1,0 +1,25 @@
+operation,linguistic_type,n_spans,pct_of_spans,median_length,q1_length,q3_length,iqr_length
+DELETE,Core participant/argument,480,6.950477845351868,1.0,1.0,1.0,0.0
+DELETE,Discourse marker or connective,130,1.882421083116131,1.0,1.0,1.0,0.0
+DELETE,Function/grammatical material,1308,18.94005212858384,1.0,1.0,1.0,0.0
+DELETE,Mixed span,2681,38.821314798725744,3.0,2.0,4.0,2.0
+DELETE,Modifier/detail,598,8.659136982334202,1.0,1.0,1.0,0.0
+DELETE,Named entity or proper name,164,2.3747465971618884,1.0,1.0,1.0,0.0
+DELETE,Negation,5,0.07240081088908196,1.0,1.0,1.0,0.0
+DELETE,Number/date,34,0.4923255140457573,1.0,1.0,1.0,0.0
+DELETE,Other nominal information,506,7.326962061975094,1.0,1.0,1.0,0.0
+DELETE,Other/unknown,55,0.7964089197799016,1.0,1.0,1.0,0.0
+DELETE,Predicate,465,6.733275412684622,1.0,1.0,1.0,0.0
+DELETE,Punctuation,480,6.950477845351868,1.0,1.0,1.0,0.0
+INSERT,Core participant/argument,503,7.083509364878187,1.0,1.0,1.0,0.0
+INSERT,Discourse marker or connective,92,1.2955921701168849,1.0,1.0,1.0,0.0
+INSERT,Function/grammatical material,1169,16.462470074637373,1.0,1.0,1.0,0.0
+INSERT,Mixed span,3071,43.24742993944515,3.0,2.0,4.0,2.0
+INSERT,Modifier/detail,446,6.280805520349246,1.0,1.0,1.0,0.0
+INSERT,Named entity or proper name,264,3.717786227291931,1.0,1.0,1.0,0.0
+INSERT,Negation,13,0.18307280664695114,1.0,1.0,1.0,0.0
+INSERT,Number/date,34,0.47880580199971834,1.0,1.0,1.0,0.0
+INSERT,Other nominal information,397,5.590761864526123,1.0,1.0,1.0,0.0
+INSERT,Other/unknown,27,0.38022813688212925,1.0,1.0,1.0,0.0
+INSERT,Predicate,619,8.717082101112519,1.0,1.0,1.0,0.0
+INSERT,Punctuation,466,6.562455992113787,1.0,1.0,1.0,0.0

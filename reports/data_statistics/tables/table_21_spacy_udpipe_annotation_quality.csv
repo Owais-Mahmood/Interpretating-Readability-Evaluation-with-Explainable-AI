@@ -1,0 +1,7 @@
+language,n_sentences_attempted,n_failures,completeness_pct
+ar,798,0,100.0
+ca,760,0,100.0
+en,376,0,100.0
+es,724,0,100.0
+fr,516,0,100.0
+it,686,0,100.0
