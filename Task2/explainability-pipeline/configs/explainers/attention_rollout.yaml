@@ -1,0 +1,10 @@
+name: attention_rollout
+family: attention
+enabled: false
+start_layer: 0
+residual_weight: 1.0
+head_reduction: mean
+discard_ratio: 0.0
+requires:
+  attention: true
+notes: Aggregates attention across layers to estimate information flow.

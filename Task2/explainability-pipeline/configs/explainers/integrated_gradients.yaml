@@ -1,0 +1,12 @@
+name: integrated_gradients
+family: gradient
+enabled: true
+target: configured
+baseline: zero_embedding
+steps: 50
+internal_batch_size: 10
+signed: true
+convergence_delta: true
+requires:
+  gradients: true
+notes: Path-integrated gradients; baseline choice must be justified.

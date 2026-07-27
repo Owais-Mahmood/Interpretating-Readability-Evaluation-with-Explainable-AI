@@ -1,0 +1,76 @@
+project:
+  name: general_explainability_project
+  description: Reusable explainability pipeline
+  modality: text
+  task_type: classification
+  languages: [en]
+  seed: 13
+
+paths:
+  data_root: data
+  output_root: outputs
+  cache_root: .cache
+
+dataset:
+  adapter: example_dataset
+  config: configs/datasets/example.yaml
+  split_for_explanations: validation
+  id_column: example_id
+  text_columns: [text]
+  label_columns: [label]
+  group_columns: [language]
+  rationale_columns: []
+  alignment_columns: []
+
+model:
+  adapter: example_transformer
+  config: configs/models/example_transformer.yaml
+  checkpoint: null
+  target_selection: predicted
+  score_type: logit
+  batch_size: 16
+  device: auto
+
+selection:
+  include_correct: true
+  include_incorrect: true
+  max_examples: 100
+  stratify_by: [language, label]
+  require_reference_explanation: false
+
+explainers:
+  - name: raw_attention
+    config: configs/explainers/raw_attention.yaml
+  - name: gradient_x_input
+    config: configs/explainers/gradient_x_input.yaml
+  - name: integrated_gradients
+    config: configs/explainers/integrated_gradients.yaml
+  - name: leave_one_out
+    config: configs/explainers/leave_one_out.yaml
+
+alignment:
+  unit: word
+  subword_pooling: sum
+  normalisation: absolute_sum_to_one
+  preserve_sign: true
+  source_target_alignment: optional
+
+evaluation:
+  metrics:
+    faithfulness: [comprehensiveness, sufficiency, deletion_auc]
+    plausibility: [token_f1, span_iou, average_precision]
+    stability: [rank_correlation, top_k_overlap]
+    sanity: [model_parameter_randomisation, label_randomisation]
+    efficiency: [runtime_seconds, peak_memory_mb]
+  top_k: [1, 3, 5, 10]
+  bootstrap_samples: 1000
+  confidence_level: 0.95
+
+reporting:
+  save_predictions: true
+  save_raw_explanations: true
+  save_aligned_explanations: true
+  save_per_example_metrics: true
+  generate_tables: true
+  generate_figures: true
+  generate_error_report: true

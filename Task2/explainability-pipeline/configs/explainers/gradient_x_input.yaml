@@ -1,0 +1,10 @@
+name: gradient_x_input
+family: gradient
+enabled: true
+target: configured
+input_space: embedding
+reduction: sum
+signed: true
+requires:
+  gradients: true
+notes: Local sensitivity multiplied by the input representation.

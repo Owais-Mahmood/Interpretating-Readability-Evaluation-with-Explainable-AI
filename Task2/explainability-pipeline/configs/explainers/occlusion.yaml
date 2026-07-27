@@ -1,0 +1,10 @@
+name: occlusion
+family: perturbation
+enabled: false
+window_size: 1
+stride: 1
+replacement: mask
+signed: true
+requires:
+  repeated_inference: true
+notes: Perturbs units or spans and measures output change.

@@ -1,0 +1,39 @@
+Loaded 3 examples for the smoke test.
+Loading mBERT (this will download the model on first run)...
+Fetching 14 files:   0%|          | 0/14 [00:00<?, ?it/s]Fetching 14 files: 100%|██████████| 14/14 [00:00<00:00, 2101.58it/s]
+The repository /users/jpdj5670/.cache/huggingface/hub/models--hannah-khallaf--e2r-mbert-merged7/snapshots/4ab2169c94ac65591a5051c52fb58f946378484d contains custom code which must be executed to correctly load the model. You can inspect the repository content at /users/jpdj5670/.cache/huggingface/hub/models--hannah-khallaf--e2r-mbert-merged7/snapshots/4ab2169c94ac65591a5051c52fb58f946378484d .
+ You can inspect the repository content at https://hf.co//users/jpdj5670/.cache/huggingface/hub/models--hannah-khallaf--e2r-mbert-merged7/snapshots/4ab2169c94ac65591a5051c52fb58f946378484d.
+You can avoid this prompt in future by passing the argument `trust_remote_code=True`.
+
+Do you wish to run the custom code? [y/N] [transformers] You are using a model of type `e2r_multilabel_classifier` to instantiate a model of type ``. This may be expected if you are loading a checkpoint that shares a subset of the architecture (e.g., loading a `sam2_video` checkpoint into `Sam2Model`), but is otherwise not supported and can yield errors. Please verify that the checkpoint is compatible with the model you are instantiating.
+Loading weights:   0%|          | 0/201 [00:00<?, ?it/s]Loading weights: 100%|██████████| 201/201 [00:00<00:00, 6602.72it/s]
+Model loaded successfully.
+4714cc6651769334: predicted ['Compression', 'Omission', 'Synonymy']
+d3145f304c3469e2: predicted ['Compression', 'Omission']
+27232ed14f973bec: predicted ['Compression', 'Omission']
+
+Running Integrated Gradients on the first example...
+
+Explanation for 4714cc6651769334, target=Compression
+Convergence delta: 0.3517
+  [SEP]: 0.8157
+  [CLS]: 0.2561
+  ##وس: 0.1873
+  ،: 0.1719
+  درس: -0.1453
+
+Explanation for 4714cc6651769334, target=Omission
+Convergence delta: 0.6279
+  [SEP]: 0.7419
+  [SEP]: 0.2086
+  في: 0.1621
+  في: 0.1592
+  هناك: 0.1562
+
+Explanation for 4714cc6651769334, target=Synonymy
+Convergence delta: 0.4425
+  [SEP]: -0.4749
+  ،: 0.3506
+  .: -0.3073
+  ##وس: 0.2104
+  درس: -0.2041

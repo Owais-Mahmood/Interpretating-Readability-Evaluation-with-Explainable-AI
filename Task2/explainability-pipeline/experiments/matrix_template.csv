@@ -1,0 +1,4 @@
+experiment_id,dataset,model,checkpoint,explainer,target,alignment_unit,seed,status,notes
+baseline-attention,replace-me,replace-me,replace-me,raw_attention,predicted,word,13,planned,
+baseline-gradient,replace-me,replace-me,replace-me,gradient_x_input,predicted,word,13,planned,
+baseline-perturbation,replace-me,replace-me,replace-me,leave_one_out,predicted,word,13,planned,

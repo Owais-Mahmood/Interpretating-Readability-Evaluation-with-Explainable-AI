@@ -1,0 +1,20 @@
+name: example_dataset
+format: csv
+path: data/processed/examples.csv
+splits:
+  train: train
+  validation: validation
+  test: test
+schema:
+  id: example_id
+  inputs: [text]
+  labels: [label]
+  metadata: [language]
+  reference_explanations: []
+  alignments: []
+validation:
+  unique_ids: true
+  allow_missing_labels: false
+  allow_empty_inputs: false
+  check_split_leakage: true
+  check_group_leakage: true

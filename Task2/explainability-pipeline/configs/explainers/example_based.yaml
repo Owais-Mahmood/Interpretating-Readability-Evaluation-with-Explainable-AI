@@ -1,0 +1,8 @@
+name: example_based
+family: example
+enabled: false
+method: influence
+reference_split: train
+top_k: 10
+requires:
+  training_examples: true

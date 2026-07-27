@@ -1,0 +1,8 @@
+name: concept
+family: concept
+enabled: false
+method: tcav
+concept_sets: []
+random_sets: []
+requires:
+  hidden_states: true

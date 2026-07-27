@@ -1,0 +1,9 @@
+name: leave_one_out
+family: perturbation
+enabled: true
+replacement: mask
+batch_size: 32
+signed: true
+requires:
+  repeated_inference: true
+notes: Measures score change after removing one unit at a time.

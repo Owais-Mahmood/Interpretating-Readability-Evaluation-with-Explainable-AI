@@ -1,0 +1,9 @@
+name: shap
+family: surrogate
+enabled: false
+algorithm: permutation
+background_size: 50
+max_evaluations: auto
+signed: true
+requires:
+  optional_dependency: shap

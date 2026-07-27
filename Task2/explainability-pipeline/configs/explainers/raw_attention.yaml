@@ -1,0 +1,10 @@
+name: raw_attention
+family: attention
+enabled: true
+layer: last
+head_reduction: mean
+query_reduction: cls
+signed: false
+requires:
+  attention: true
+notes: Diagnostic baseline; not assumed to be causal.

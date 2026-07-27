@@ -1,0 +1,6 @@
+name: counterfactual
+family: counterfactual
+enabled: false
+generator: replace-me
+constraints: []
+max_candidates: 20
