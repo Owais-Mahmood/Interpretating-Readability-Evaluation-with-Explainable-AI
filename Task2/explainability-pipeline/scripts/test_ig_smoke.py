@@ -15,6 +15,7 @@ from xai_pipeline.datasets.simplification import SimplificationDatasetAdapter
 from xai_pipeline.models.mbert_e2r import MBERTModelAdapter
 from xai_pipeline.explainers.integrated_gradients_impl import IntegratedGradientsExplainer
 from xai_pipeline.explainers.gradient_shap_impl import GradientShapExplainer
+from xai_pipeline.explainers.raw_attention_impl import RawAttentionExplainer
 
 
 def main():
@@ -69,6 +70,20 @@ def main():
         )[:5]:
             print(f"  {token}: {score:.4f}")
 
+    # 6. Run Raw Attention on the first example only
+    print()
+    print("Running Raw Attention on the first example...")
+    attention_explainer = RawAttentionExplainer(layer=-1)
+    attention_explanations = attention_explainer.explain(examples[:1], model, predictions[:1])
+
+    for explanation in attention_explanations:
+        print(f"\nRaw Attention for {explanation.example_id}, target={explanation.target}")
+        for token, score in sorted(
+            zip(explanation.units, explanation.scores),
+            key=lambda pair: abs(pair[1]),
+            reverse=True,
+        )[:5]:
+            print(f"  {token}: {score:.4f}")
 
 if __name__ == "__main__":
     main()

@@ -43,7 +43,7 @@ class MBERTModelAdapter:
         )
         self.tokenizer = AutoTokenizer.from_pretrained(root)
         self.model = AutoModelForSequenceClassification.from_pretrained(
-            root, trust_remote_code=True
+            root, trust_remote_code=True, attn_implementation="eager"
         )
         if torch.cuda.is_available():
             self.model = self.model.to("cuda")
