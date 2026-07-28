@@ -1,12 +1,12 @@
 Loaded 3 examples for the smoke test.
 Loading mBERT (this will download the model on first run)...
-Fetching 14 files:   0%|          | 0/14 [00:00<?, ?it/s]Fetching 14 files: 100%|██████████| 14/14 [00:00<00:00, 2101.58it/s]
+Fetching 14 files:   0%|          | 0/14 [00:00<?, ?it/s]Fetching 14 files: 100%|██████████| 14/14 [00:00<00:00, 2187.38it/s]
 The repository /users/jpdj5670/.cache/huggingface/hub/models--hannah-khallaf--e2r-mbert-merged7/snapshots/4ab2169c94ac65591a5051c52fb58f946378484d contains custom code which must be executed to correctly load the model. You can inspect the repository content at /users/jpdj5670/.cache/huggingface/hub/models--hannah-khallaf--e2r-mbert-merged7/snapshots/4ab2169c94ac65591a5051c52fb58f946378484d .
  You can inspect the repository content at https://hf.co//users/jpdj5670/.cache/huggingface/hub/models--hannah-khallaf--e2r-mbert-merged7/snapshots/4ab2169c94ac65591a5051c52fb58f946378484d.
 You can avoid this prompt in future by passing the argument `trust_remote_code=True`.
 
-Do you wish to run the custom code? [y/N] [transformers] You are using a model of type `e2r_multilabel_classifier` to instantiate a model of type ``. This may be expected if you are loading a checkpoint that shares a subset of the architecture (e.g., loading a `sam2_video` checkpoint into `Sam2Model`), but is otherwise not supported and can yield errors. Please verify that the checkpoint is compatible with the model you are instantiating.
-Loading weights:   0%|          | 0/201 [00:00<?, ?it/s]Loading weights: 100%|██████████| 201/201 [00:00<00:00, 6602.72it/s]
+Do you wish to run the custom code? [y/N] Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/201 [00:00<?, ?it/s]Loading weights: 100%|██████████| 201/201 [00:00<00:00, 13016.74it/s]
 Model loaded successfully.
 4714cc6651769334: predicted ['Compression', 'Omission', 'Synonymy']
 d3145f304c3469e2: predicted ['Compression', 'Omission']
@@ -37,3 +37,26 @@ Convergence delta: 0.4425
   .: -0.3073
   ##وس: 0.2104
   درس: -0.2041
+
+Running GradientSHAP on the first example...
+
+GradientSHAP for 4714cc6651769334, target=Compression
+  [SEP]: 0.5420
+  ،: 0.4216
+  هناك: 0.2709
+  درس: -0.2335
+  ##وس: 0.2256
+
+GradientSHAP for 4714cc6651769334, target=Omission
+  [SEP]: 0.8164
+  في: 0.1577
+  هناك: 0.1378
+  ما: -0.1215
+  .: 0.1188
+
+GradientSHAP for 4714cc6651769334, target=Synonymy
+  [SEP]: -0.4665
+  [CLS]: -0.3203
+  هناك: -0.2632
+  .: -0.2518
+  [SEP]: -0.2468
