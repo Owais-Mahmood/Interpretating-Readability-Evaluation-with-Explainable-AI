@@ -1,0 +1,72 @@
+Loaded 260 examples for the full run.
+Loading mBERT...
+Fetching 14 files:   0%|          | 0/14 [00:00<?, ?it/s]Fetching 14 files: 100%|██████████| 14/14 [00:00<00:00, 2405.58it/s]
+The repository /users/jpdj5670/.cache/huggingface/hub/models--hannah-khallaf--e2r-mbert-merged7/snapshots/4ab2169c94ac65591a5051c52fb58f946378484d contains custom code which must be executed to correctly load the model. You can inspect the repository content at /users/jpdj5670/.cache/huggingface/hub/models--hannah-khallaf--e2r-mbert-merged7/snapshots/4ab2169c94ac65591a5051c52fb58f946378484d .
+ You can inspect the repository content at https://hf.co//users/jpdj5670/.cache/huggingface/hub/models--hannah-khallaf--e2r-mbert-merged7/snapshots/4ab2169c94ac65591a5051c52fb58f946378484d.
+You can avoid this prompt in future by passing the argument `trust_remote_code=True`.
+
+Do you wish to run the custom code? [y/N] Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/201 [00:00<?, ?it/s]Loading weights: 100%|██████████| 201/201 [00:00<00:00, 15377.20it/s]
+Model loaded successfully.
+Running predictions on all examples...
+Predictions done.
+
+Running integrated_gradients on all 260 examples...
+  integrated_gradients: 20/260 examples done (68s elapsed)
+  integrated_gradients: 40/260 examples done (123s elapsed)
+  integrated_gradients: 60/260 examples done (175s elapsed)
+  integrated_gradients: 80/260 examples done (224s elapsed)
+  integrated_gradients: 100/260 examples done (236s elapsed)
+  integrated_gradients: 120/260 examples done (285s elapsed)
+  integrated_gradients: 140/260 examples done (345s elapsed)
+  integrated_gradients: 160/260 examples done (415s elapsed)
+  integrated_gradients: 180/260 examples done (505s elapsed)
+  integrated_gradients: 200/260 examples done (523s elapsed)
+  integrated_gradients: 220/260 examples done (592s elapsed)
+  integrated_gradients: 240/260 examples done (696s elapsed)
+  integrated_gradients: 260/260 examples done (785s elapsed)
+integrated_gradients finished in 785s, produced 728 explanations.
+
+Running gradient_shap on all 260 examples...
+  gradient_shap: 20/260 examples done (22s elapsed)
+  gradient_shap: 40/260 examples done (55s elapsed)
+  gradient_shap: 60/260 examples done (80s elapsed)
+  gradient_shap: 80/260 examples done (95s elapsed)
+  gradient_shap: 100/260 examples done (101s elapsed)
+  gradient_shap: 120/260 examples done (124s elapsed)
+  gradient_shap: 140/260 examples done (147s elapsed)
+  gradient_shap: 160/260 examples done (190s elapsed)
+  gradient_shap: 180/260 examples done (218s elapsed)
+  gradient_shap: 200/260 examples done (227s elapsed)
+  gradient_shap: 220/260 examples done (262s elapsed)
+  gradient_shap: 240/260 examples done (333s elapsed)
+  gradient_shap: 260/260 examples done (375s elapsed)
+gradient_shap finished in 375s, produced 728 explanations.
+
+Running raw_attention on all 260 examples...
+  raw_attention: 20/260 examples done (0s elapsed)
+  raw_attention: 40/260 examples done (1s elapsed)
+  raw_attention: 60/260 examples done (1s elapsed)
+  raw_attention: 80/260 examples done (1s elapsed)
+  raw_attention: 100/260 examples done (1s elapsed)
+  raw_attention: 120/260 examples done (1s elapsed)
+  raw_attention: 140/260 examples done (2s elapsed)
+  raw_attention: 160/260 examples done (2s elapsed)
+  raw_attention: 180/260 examples done (2s elapsed)
+  raw_attention: 200/260 examples done (2s elapsed)
+  raw_attention: 220/260 examples done (2s elapsed)
+  raw_attention: 240/260 examples done (3s elapsed)
+  raw_attention: 260/260 examples done (3s elapsed)
+raw_attention finished in 3s, produced 728 explanations.
+
+Running plausibility evaluation on all explanations...
+Evaluation produced 8652 metric records.
+Saved full results to outputs/metrics/plausibility_full_results.csv
+Saved summary to outputs/tables/plausibility_summary_by_method.csv
+
+=== Summary: mean metric value by method ===
+metric                   auprc   f1_at_k  precision_at_k  recall_at_k
+method                                                               
+gradient_shap         0.266347  0.236403        0.236403     0.236403
+integrated_gradients  0.265497  0.237344        0.237344     0.237344
+raw_attention         0.263178  0.240613        0.240613     0.240613
