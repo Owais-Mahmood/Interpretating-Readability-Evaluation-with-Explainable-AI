@@ -16,11 +16,13 @@ from xai_pipeline.models.mbert_e2r import MBERTModelAdapter
 from xai_pipeline.explainers.integrated_gradients_impl import IntegratedGradientsExplainer
 from xai_pipeline.explainers.gradient_shap_impl import GradientShapExplainer
 from xai_pipeline.explainers.raw_attention_impl import RawAttentionExplainer
+from xai_pipeline.evaluators.plausibility_impl import PlausibilityEvaluator
+import pandas as pd
 
 
 def main():
     # 1. Load a handful of real examples (adjust path to wherever test_set.csv actually is)
-    dataset = SimplificationDatasetAdapter("data/raw/test_set.csv")
+    dataset = SimplificationDatasetAdapter("data/raw/test_set_with_spans.csv")
     errors = dataset.validate()
     if errors:
         print("Dataset validation errors:", errors)
@@ -84,6 +86,19 @@ def main():
             reverse=True,
         )[:5]:
             print(f"  {token}: {score:.4f}")
+
+    # 7. Evaluate all explanations against the real gold spans
+    print()
+    print("Running plausibility evaluation against real gold spans...")
+    all_explanations = explanations + gshap_explanations + attention_explanations
+    evaluator = PlausibilityEvaluator(tokenizer=model.tokenizer)
+    results = evaluator.evaluate(examples[:1], predictions[:1], all_explanations)
+
+    if len(results) == 0:
+        print("No metrics computed (likely no gold spans matched for this example).")
+    else:
+        summary = results.groupby(["method", "metric"])["value"].mean().unstack()
+        print(summary.to_string())
 
 if __name__ == "__main__":
     main()

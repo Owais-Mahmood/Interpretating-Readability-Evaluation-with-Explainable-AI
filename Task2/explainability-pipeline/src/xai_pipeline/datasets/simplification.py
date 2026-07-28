@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import hashlib
+import json
 from pathlib import Path
 
 import pandas as pd
@@ -21,10 +22,11 @@ LABELS = [
 
 @DATASETS.register("simplification_test_set")
 class SimplificationDatasetAdapter:
-    """Loads Task 2's test_set.csv into the framework's Example contract.
-
-    Applies the Transposition -> Syntactic Change merge (per Nouran's
-    instruction) so every pair has an evaluable official-taxonomy label.
+    """Loads Task 2's test_set_with_spans.csv (test_set.csv enriched with
+    real deletion/insertion spans from Task 1) into the framework's Example
+    contract. Applies the Transposition -> Syntactic Change merge (per
+    Nouran's instruction) so every pair has an evaluable official-taxonomy
+    label.
     """
 
     def __init__(self, path: str | Path) -> None:
@@ -43,8 +45,15 @@ class SimplificationDatasetAdapter:
 
     def load(self, split: str = "test") -> list[Example]:
         df = self._load_dataframe()
+        has_spans = "deletion_spans" in df.columns and "insertion_spans" in df.columns
+
         examples = []
         for _, row in df.iterrows():
+            references = {}
+            if has_spans:
+                references["deletion_spans"] = json.loads(row["deletion_spans"])
+                references["insertion_spans"] = json.loads(row["insertion_spans"])
+
             examples.append(
                 Example(
                     example_id=str(row["pair_id"]),
@@ -57,11 +66,7 @@ class SimplificationDatasetAdapter:
                         "language": row["language"],
                         "group_id": row["group_id"],
                     },
-                    # NOTE: word_alignments/edit_type/edited_spans are not yet
-                    # present in test_set.csv -- still need to be joined in
-                    # from the Task 1 data before faithfulness/plausibility
-                    # evaluation against real edits can be done.
-                    references={},
+                    references=references,
                 )
             )
         return examples
