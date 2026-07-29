@@ -1,0 +1,40 @@
+Loaded 2 examples for the smoke test.
+Loading DeepSeek (this downloads several GB on first run)...
+Fetching 13 files:   0%|          | 0/13 [00:00<?, ?it/s]Fetching 13 files: 100%|██████████| 13/13 [00:00<00:00, 2184.18it/s]
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/338 [00:00<?, ?it/s]Loading weights:   0%|          | 1/338 [00:00<00:34,  9.89it/s]Loading weights:   4%|▍         | 15/338 [00:00<00:04, 78.49it/s]Loading weights:   9%|▊         | 29/338 [00:00<00:03, 98.39it/s]Loading weights:  15%|█▌        | 51/338 [00:00<00:02, 139.29it/s]Loading weights:  19%|█▉        | 65/338 [00:00<00:02, 132.06it/s]Loading weights:  26%|██▌       | 87/338 [00:00<00:01, 156.63it/s]Loading weights:  30%|███       | 103/338 [00:00<00:01, 150.75it/s]Loading weights:  36%|███▋      | 123/338 [00:00<00:01, 162.69it/s]Loading weights:  41%|████▏     | 140/338 [00:01<00:01, 157.37it/s]Loading weights:  47%|████▋     | 159/338 [00:01<00:01, 164.29it/s]Loading weights:  52%|█████▏    | 176/338 [00:01<00:01, 158.64it/s]Loading weights:  58%|█████▊    | 195/338 [00:01<00:00, 165.47it/s]Loading weights:  63%|██████▎   | 212/338 [00:01<00:00, 159.31it/s]Loading weights:  68%|██████▊   | 231/338 [00:01<00:00, 165.95it/s]Loading weights:  73%|███████▎  | 248/338 [00:01<00:00, 159.55it/s]Loading weights:  79%|███████▉  | 267/338 [00:01<00:00, 166.16it/s]Loading weights:  84%|████████▍ | 284/338 [00:01<00:00, 159.77it/s]Loading weights:  90%|████████▉ | 303/338 [00:01<00:00, 166.09it/s]Loading weights:  95%|█████████▍| 320/338 [00:02<00:00, 159.54it/s]Loading weights: 100%|██████████| 338/338 [00:02<00:00, 154.39it/s]
+[transformers] [1mQwen2ForSequenceClassification LOAD REPORT[0m from: deepseek-ai/DeepSeek-R1-Distill-Qwen-7B
+Key            | Status     | 
+---------------+------------+-
+lm_head.weight | UNEXPECTED | 
+score.weight   | MISSING    | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+Traceback (most recent call last):
+  File "/mnt/scratch/jpdj5670/XAI/Interpretating-Readability-Evaluation-with-Explainable-AI/Task2/explainability-pipeline/scripts/test_deepseek_smoke.py", line 38, in <module>
+    main()
+    ~~~~^^
+  File "/mnt/scratch/jpdj5670/XAI/Interpretating-Readability-Evaluation-with-Explainable-AI/Task2/explainability-pipeline/scripts/test_deepseek_smoke.py", line 29, in main
+    model.load()
+    ~~~~~~~~~~^^
+  File "/mnt/scratch/jpdj5670/XAI/Interpretating-Readability-Evaluation-with-Explainable-AI/Task2/explainability-pipeline/src/xai_pipeline/models/deepseek_e2r.py", line 103, in load
+    self.model = PeftModel.from_pretrained(base, adapter_dir)
+                 ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/users/jpdj5670/.local/lib/python3.13/site-packages/peft/peft_model.py", line 619, in from_pretrained
+    load_result = model.load_adapter(
+        model_id,
+    ...<5 lines>...
+        **kwargs,
+    )
+  File "/users/jpdj5670/.local/lib/python3.13/site-packages/peft/peft_model.py", line 1490, in load_adapter
+    load_result = set_peft_model_state_dict(
+        self,
+    ...<3 lines>...
+        low_cpu_mem_usage=low_cpu_mem_usage,
+    )
+  File "/users/jpdj5670/.local/lib/python3.13/site-packages/peft/utils/save_and_load.py", line 742, in set_peft_model_state_dict
+    state_dict[store_key] = peft_model_state_dict[lookup_key]
+                            ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+KeyError: 'base_model.model.score.weight'
