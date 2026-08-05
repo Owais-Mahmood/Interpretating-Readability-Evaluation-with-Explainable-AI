@@ -24,8 +24,11 @@ def main():
     # 1. Load a handful of real examples (adjust path to wherever test_set.csv actually is)
     dataset = SimplificationDatasetAdapter("data/raw/test_set_with_spans.csv")
     errors = dataset.validate()
+    blocking_errors = [e for e in errors if not e.startswith("WARNING")]
     if errors:
-        print("Dataset validation errors:", errors)
+        print("Dataset validation messages:", errors)
+    if blocking_errors:
+        print("Stopping due to blocking errors above.")
         return
     examples = dataset.load("test")[:3]  # just the first 3, for a quick smoke test
     print(f"Loaded {len(examples)} examples for the smoke test.")

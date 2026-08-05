@@ -9,24 +9,29 @@ import pandas as pd
 from xai_pipeline.contracts import Example
 from xai_pipeline.registry import DATASETS
 
+# NEW 6-label taxonomy, per Nouran's Test_E2R_Strategy_Models.ipynb.
+# NOTE: this drops "Illocutionary Change" entirely (was in the old 7-label
+# version) and does not merge in "Transposition" (unlike the old pipeline,
+# which merged Transposition into Syntactic Change). No merge target has
+# been specified for either under this new taxonomy -- 12/260 pairs (6
+# Transposition-only, 6 Illocutionary-Change-only) currently have no
+# evaluable label as a result. Flagged for Nouran; not resolved here.
+
 LABELS = [
+    "Synonymy",
+    "Modulation",
     "Compression",
     "Explanation",
-    "Illocutionary Change",
-    "Modulation",
-    "Omission",
-    "Synonymy",
     "Syntactic Change",
+    "Omission",
 ]
 
 
 @DATASETS.register("simplification_test_set")
 class SimplificationDatasetAdapter:
-    """Loads Task 2's test_set_with_spans.csv (test_set.csv enriched with
-    real deletion/insertion spans from Task 1) into the framework's Example
-    contract. Applies the Transposition -> Syntactic Change merge (per
-    Nouran's instruction) so every pair has an evaluable official-taxonomy
-    label.
+    """Loads Task 2's test_set_with_spans.csv into the framework's Example
+    contract, using the NEW 6-label taxonomy (no Transposition merge,
+    no Illocutionary Change).
     """
 
     def __init__(self, path: str | Path) -> None:
@@ -35,12 +40,7 @@ class SimplificationDatasetAdapter:
 
     def _load_dataframe(self) -> pd.DataFrame:
         if self._df is None:
-            df = pd.read_csv(self.path)
-            # Merge Transposition into Syntactic Change (agreed with Nouran)
-            df["Syntactic Change"] = (
-                (df["Syntactic Change"] == 1) | (df["Transposition"] == 1)
-            ).astype(int)
-            self._df = df
+            self._df = pd.read_csv(self.path)
         return self._df
 
     def load(self, split: str = "test") -> list[Example]:
@@ -90,8 +90,10 @@ class SimplificationDatasetAdapter:
         no_official_label = df[df[LABELS].sum(axis=1) == 0]
         if len(no_official_label) > 0:
             errors.append(
-                f"{len(no_official_label)} pairs have zero official-taxonomy labels "
-                f"even after the Transposition merge: {no_official_label['pair_id'].tolist()}"
+                f"WARNING (not blocking): {len(no_official_label)} pairs have zero labels "
+                f"under the new 6-label taxonomy (Transposition-only or Illocutionary-Change-only "
+                f"pairs, since neither maps to anything in this taxonomy): "
+                f"{no_official_label['pair_id'].tolist()}"
             )
 
         return errors

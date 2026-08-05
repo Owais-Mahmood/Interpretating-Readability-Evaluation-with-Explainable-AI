@@ -1,12 +1,13 @@
+Dataset validation messages: ["WARNING (not blocking): 12 pairs have zero labels under the new 6-label taxonomy (Transposition-only or Illocutionary-Change-only pairs, since neither maps to anything in this taxonomy): ['2989ab852a911f73', '3e6f5b9d43db7d3d', '6b2fbda34a617d93', '912f69180c3fd7a0', '9796ad923067ac5c', 'c81aaf6f8e37f6d7', '0864ecb4ccbf3735', '4479f26c2ced27c7', '3a176b3bd2177f57', 'e04fa0d9f0c51049', '563f735d22e6922a', '3dc4665f2055c981']"]
 Loaded 3 examples for the smoke test.
 Loading mBERT (this will download the model on first run)...
-Fetching 14 files:   0%|          | 0/14 [00:00<?, ?it/s]Fetching 14 files: 100%|██████████| 14/14 [00:00<00:00, 2116.50it/s]
+Fetching 14 files:   0%|          | 0/14 [00:00<?, ?it/s]Fetching 14 files: 100%|██████████| 14/14 [00:00<00:00, 2148.41it/s]
 The repository /users/jpdj5670/.cache/huggingface/hub/models--hannah-khallaf--e2r-mbert-merged7/snapshots/4ab2169c94ac65591a5051c52fb58f946378484d contains custom code which must be executed to correctly load the model. You can inspect the repository content at /users/jpdj5670/.cache/huggingface/hub/models--hannah-khallaf--e2r-mbert-merged7/snapshots/4ab2169c94ac65591a5051c52fb58f946378484d .
  You can inspect the repository content at https://hf.co//users/jpdj5670/.cache/huggingface/hub/models--hannah-khallaf--e2r-mbert-merged7/snapshots/4ab2169c94ac65591a5051c52fb58f946378484d.
 You can avoid this prompt in future by passing the argument `trust_remote_code=True`.
 
 Do you wish to run the custom code? [y/N] Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
-Loading weights:   0%|          | 0/201 [00:00<?, ?it/s]Loading weights: 100%|██████████| 201/201 [00:00<00:00, 9550.54it/s]
+Loading weights:   0%|          | 0/201 [00:00<?, ?it/s]Loading weights: 100%|██████████| 201/201 [00:00<00:00, 4485.00it/s]
 Model loaded successfully.
 4714cc6651769334: predicted ['Compression', 'Omission', 'Synonymy']
 d3145f304c3469e2: predicted ['Compression', 'Omission']
@@ -41,25 +42,25 @@ Convergence delta: 0.4425
 Running GradientSHAP on the first example...
 
 GradientSHAP for 4714cc6651769334, target=Compression
-  [SEP]: 0.9889
-  ##وس: 0.0438
-  درس: -0.0426
-  ،: 0.0371
-  ##ا: -0.0325
+  [SEP]: 0.5729
+  ##وس: 0.2800
+  هناك: 0.2627
+  ،: 0.2301
+  [CLS]: 0.2204
 
 GradientSHAP for 4714cc6651769334, target=Omission
-  [SEP]: -0.9959
-  ##اسات: 0.0254
-  تل: 0.0254
-  هناك: 0.0249
-  هناك: 0.0241
+  [SEP]: -0.3075
+  هناك: 0.2298
+  في: 0.2257
+  .: -0.2138
+  ##حصل: -0.1879
 
 GradientSHAP for 4714cc6651769334, target=Synonymy
-  [SEP]: -0.3603
-  .: -0.3202
-  ،: 0.3039
-  هناك: -0.2973
-  درس: -0.2147
+  [SEP]: -0.5584
+  ،: 0.3139
+  .: -0.3029
+  [CLS]: -0.2340
+  .: -0.2148
 
 Running Raw Attention on the first example...
 
@@ -85,8 +86,8 @@ Raw Attention for 4714cc6651769334, target=Synonymy
   هناك: 0.0304
 
 Running plausibility evaluation against real gold spans...
-metric                   auprc  f1_at_k  precision_at_k  recall_at_k
-method                                                              
-gradient_shap         0.234685      0.2             0.2          0.2
-integrated_gradients  0.244519      0.2             0.2          0.2
-raw_attention         0.262203      0.2             0.2          0.2
+metric                   auprc   f1_at_k  precision_at_k  recall_at_k
+method                                                               
+gradient_shap         0.246479  0.216667        0.216667     0.216667
+integrated_gradients  0.244519  0.200000        0.200000     0.200000
+raw_attention         0.262203  0.200000        0.200000     0.200000
