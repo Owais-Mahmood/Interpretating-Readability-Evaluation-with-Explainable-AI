@@ -1,0 +1,555 @@
+version: 1.0.0
+schema: e2r-diastratic-taxonomy-v1
+title: Taxonomy for diastratic translation
+source:
+  document: E2R strategies - New.docx
+  sha256: d8324bd97f2caeea526f7a7101e006c4afd16fbdf6dea75b5a717d6d2eb5b718
+  ingested_on: '2026-06-24'
+  status: project-provided-authoritative-taxonomy
+code_rationale: The source document states that five-letter codes denote macrostrategies,
+  six-letter codes strategies, and seven-letter codes microstrategies. Codes are preserved
+  exactly even where their observed length differs.
+continuum:
+  description: Strategies are organised from maximum addition of characters to maximum
+    subtraction of characters.
+  maximum_addition: Expla
+  neutral_point: Trans
+  maximum_subtraction: Omiss
+  ordered_macro_codes:
+  - Expla
+  - Modul
+  - Synon
+  - Transp
+  - Trans
+  - SynCh
+  - IllCh
+  - Compr
+  - Omiss
+classifier_alignment:
+  current_labels:
+  - Synonymy
+  - Modulation
+  - Compression
+  - Explanation
+  - Syntactic Change
+  - Omission
+  macro_to_classifier_label:
+    Expla: Explanation
+    Modul: Modulation
+    Synon: Synonymy
+    Transp: Syntactic Change
+    Trans: null
+    SynCh: Syntactic Change
+    IllCh: null
+    Compr: Compression
+    Omiss: Omission
+  notes:
+  - The primary operational inventory contains six labels.
+  - Transposition and the former Syntactic Change annotation both map to the merged
+    Syntactic Change target.
+  - Transcription identifies unchanged standard/E2R pairs and is retained only as
+    a separate audit set; it is excluded from all train, development, and test data.
+  - Illocutionary Change is excluded from the six-label task; label-only pairs are
+    evaluated separately as a removed-label audit.
+nodes:
+- code: Expla
+  name: Explanation
+  level: macro
+  definition: A word, expression, trope, schema, deixis, implicit grammatical construct,
+    or implicit content is explained or made explicit using other words.
+  aliases:
+  - explication
+  - explicitation
+  - make explicit
+  - clarification
+- code: WorExp
+  name: Word explanation
+  level: micro
+  parent: Expla
+  definition: A word given for known is explained using other words.
+  examples:
+  - source: the present agreement is signed by Carlo, Nouran and Serge
+    simplified: When people want to decide something they sign a document. This document
+      is called an agreement. Carlo, Nouran and Serge signed this agreement.
+- code: ExpExp
+  name: Expression explanation
+  level: micro
+  parent: Expla
+  definition: An expression given for known is explained using other words.
+  examples:
+  - source: make sure that the NCS follows fair work practices
+    simplified: Make sure the NCS speaks to people in a way that is easy to understand.
+- code: TroExp
+  name: Trope explanation
+  level: micro
+  parent: Expla
+  definition: Tropes are explained using other words.
+  examples:
+  - source: Kim is a mountain
+    simplified: Kim is very tall
+- code: SchExp
+  name: Schema explanation
+  level: micro
+  parent: Expla
+  definition: A rhetorical or schematic construction is unpacked into explicit propositions.
+  examples:
+  - source: it is not that I don’t like him, but he should think before speaking
+    simplified: he doesn’t think before speaking. I don’t like this.
+- code: DeiExp
+  name: Deixis explanation
+  level: micro
+  parent: Expla
+  definition: Deixis is explained using other words.
+  examples:
+  - source: In this table, that piece of data was not there at the time
+    simplified: Table number 1 shows data about fired employees. Data about fired
+      employees is a new piece of data. Five years ago, table number 1 did not have
+      data about fired employees.
+- code: HidGra
+  name: Hidden grammatical content
+  level: micro
+  parent: Expla
+  definition: Implicit grammatical constructs are made explicit.
+  examples:
+  - source: Cross the name of the candidate [...] you want for president
+    simplified: Cross the name of the candidate that you want for president
+- code: HidCon
+  name: Hidden content
+  level: micro
+  parent: Expla
+  definition: Implicit content is made explicit.
+  examples:
+  - source: They need this wherever they are
+    simplified: They need this wherever they are in Scotland.
+- code: Modul
+  name: Modulation
+  level: macro
+  definition: Information is redistributed or expressed linearly.
+  aliases:
+  - linearisation
+  - reordering
+  - redistribution
+- code: ModInf
+  name: One meaning per sentence
+  level: micro
+  parent: Modul
+  definition: One meaning is expressed per sentence.
+  examples:
+  - source: Starmer is a barrister and the incumbent PM after having served as head
+      of the Labour
+    simplified: Starmer was the head of the Labour Party. Starmer is a lawyer. Starmer
+      is the Prime Minister.
+- code: ModLin
+  name: Linear information order
+  level: micro
+  parent: Modul
+  definition: Information is provided in linear order.
+- code: ModClau
+  name: Logical or chronological clause order
+  level: micro
+  parent: Modul
+  definition: Clauses are placed in logical and/or chronological order.
+  examples:
+  - source: Joan drove to the village to meet her parents
+    simplified: Joan drove to the village. In the village Joan met her parents
+- code: ModGrou
+  name: Complement regrouping
+  level: micro
+  parent: Modul
+  definition: Complements are changed into other complements to clarify information.
+- code: ModWord
+  name: Basic word order
+  level: micro
+  parent: Modul
+  definition: Words in a sentence, clause, or phrase follow basic word order.
+  examples:
+  - source: pizza, I had with John on the beach
+    simplified: John and I had pizza on the beach
+- code: Synon
+  name: Synonymy
+  level: macro
+  definition: A more common and general word is used instead of a more complex or
+    specific one.
+  aliases:
+  - lexical simplification
+  - replacement
+  - simpler word
+- code: Prasyn
+  name: Pragmatic synonymy
+  level: strategy
+  parent: Synon
+  definition: Synonymy based on pragmatic reference.
+- code: PraProp
+  name: Proper-name substitution
+  level: micro
+  parent: Prasyn
+  definition: A proper name is replaced by a common description.
+  examples:
+  - source: Nutella
+    simplified: chocolate
+- code: PraCont
+  name: Contextual substitution
+  level: micro
+  parent: Prasyn
+  definition: A context-dependent name or expression is replaced by its contextual
+    role.
+  examples:
+  - source: Starmer
+    simplified: the Prime Minister
+- code: PrAcron
+  name: Acronym expansion
+  level: micro
+  parent: Prasyn
+  definition: An acronym is replaced by its expanded form.
+  examples:
+  - source: PM
+    simplified: Prime Minister
+- code: Semsyn
+  name: Semantic synonymy
+  level: strategy
+  parent: Synon
+  definition: Synonymy based on semantic relations.
+- code: SemHype
+  name: Hypernym substitution
+  level: micro
+  parent: Semsyn
+  definition: A more general hypernym is used.
+  examples:
+  - source: barrister
+    simplified: lawyer
+- code: SemHypo
+  name: Hyponym substitution
+  level: micro
+  parent: Semsyn
+  definition: A more specific or concrete hyponym is used.
+  examples:
+  - source: faculty staff
+    simplified: teachers
+- code: SemStere
+  name: Stereotypical/common-word substitution
+  level: micro
+  parent: Semsyn
+  definition: A stereotypical or common word replaces a less common one.
+  examples:
+  - source: ponder; dramatically
+    simplified: think; very
+- code: Grasyn
+  name: Grammatical synonymy
+  level: strategy
+  parent: Synon
+  definition: Synonymy realised through grammatical alternation.
+- code: GraNega
+  name: Negation reformulation
+  level: micro
+  parent: Grasyn
+  definition: A negative construction is reformulated.
+  examples:
+  - source: I don’t hate you
+    simplified: I love you
+- code: GraPass
+  name: Passive-to-active reformulation
+  level: micro
+  parent: Grasyn
+  definition: Passive voice is replaced by active voice.
+  examples:
+  - source: John was hit by a car
+    simplified: A car hit John
+- code: GraPron
+  name: Pronoun resolution
+  level: micro
+  parent: Grasyn
+  definition: A pronoun is replaced by an explicit referent.
+  examples:
+  - source: I don’t like it
+    simplified: I don’t like that sandwich
+- code: GraTens
+  name: Tense simplification
+  level: micro
+  parent: Grasyn
+  definition: A complex tense relation is expressed with simpler tense sequencing.
+  examples:
+  - source: before moving to Spain, Kate had worked as a barrister in the UK
+    simplified: Kate was a lawyer in the United Kingdom. Then she moved to Spain
+- code: Transp
+  name: Transposition
+  level: macro
+  definition: The word class is changed while preserving the underlying meaning.
+  examples:
+  - source: 'My reasoning is clear: he failed the exam so he shouldn’t be admitted'
+    simplified: I think that he shouldn’t be admitted, because he failed the exam
+  aliases:
+  - word-class change
+  - part-of-speech change
+- code: TraNou
+  name: Noun transposition
+  level: micro
+  parent: Transp
+  definition: Nouns should stand for things, animals, or people.
+  examples:
+  - source: mountainous landscapes are fantastic
+    simplified: mountains are beautiful
+- code: TraVer
+  name: Verb transposition
+  level: micro
+  parent: Transp
+  definition: Verbs should express actions.
+  examples:
+  - source: Running is an activity I like to do extensively
+    simplified: I like to run a lot.
+- code: TrAdje
+  name: Adjective transposition
+  level: micro
+  parent: Transp
+  definition: Adjectives qualify nouns.
+- code: TrAdve
+  name: Adverb transposition
+  level: micro
+  parent: Transp
+  definition: Adverbs qualify verbs.
+  examples:
+  - source: I like to do extensively
+    simplified: I like to run a lot.
+- code: Trans
+  name: Transcription
+  level: macro
+  definition: Words are left unchanged because no simplification is needed.
+  examples:
+  - source: yesterday I went to the cinema with John
+    simplified: yesterday I went to the cinema with John
+  aliases:
+  - transcript
+  - unchanged
+  - no simplification
+- code: SynCh
+  name: Syntactic change
+  level: macro
+  definition: A unit is changed into a different syntactic unit using the same words.
+  aliases:
+  - syntactic restructuring
+  - unit conversion
+- code: SynW2G
+  name: Word to group
+  level: micro
+  parent: SynCh
+  definition: A word is turned into a group using the same words.
+- code: SynG2T
+  name: Group to word
+  level: micro
+  parent: SynCh
+  definition: A group is turned into a word using the same words.
+- code: SynW2C
+  name: Word to clause
+  level: micro
+  parent: SynCh
+  definition: A word is turned into a clause using the same words.
+- code: SynC2W
+  name: Clause to word
+  level: micro
+  parent: SynCh
+  definition: A clause is turned into a word using the same words.
+- code: SynW2S
+  name: Word to sentence
+  level: micro
+  parent: SynCh
+  definition: A word is turned into a sentence using the same words.
+- code: SynS2W
+  name: Sentence to word
+  level: micro
+  parent: SynCh
+  definition: A sentence is turned into a word using the same words.
+- code: SynG2C
+  name: Group to clause
+  level: micro
+  parent: SynCh
+  definition: A group is turned into a clause using the same words.
+  examples:
+  - source: John’s clothes
+    simplified: the clothes that John wears
+- code: SynC2G
+  name: Clause to group
+  level: micro
+  parent: SynCh
+  definition: A clause is turned into a group using the same words.
+- code: SynG2S
+  name: Group to sentence
+  level: micro
+  parent: SynCh
+  definition: A group is turned into a sentence using the same words.
+- code: SynS2G
+  name: Sentence to group
+  level: micro
+  parent: SynCh
+  definition: A sentence is turned into a group using the same words.
+- code: SynC2S
+  name: Clause to sentence
+  level: micro
+  parent: SynCh
+  definition: A clause is turned into a sentence using the same words.
+- code: SynS2C
+  name: Sentence to clause
+  level: micro
+  parent: SynCh
+  definition: A sentence is turned into a clause using the same words.
+- code: IllCh
+  name: Illocutionary change
+  level: macro
+  definition: What is implied is said explicitly.
+  examples:
+  - source: we cannot say that George is famous for his diplomacy
+    simplified: George says what he thinks. George is not diplomatic. He says what
+      he thinks.
+  aliases:
+  - illocution
+  - implication made explicit
+- code: Compr
+  name: Compression
+  level: macro
+  definition: Grammatical or semantic constructs are compressed while their central
+    content remains represented.
+  aliases:
+  - condensation
+  - shortening
+  - merge
+- code: GraSim
+  name: Grammatical compression
+  level: strategy
+  parent: Compr
+  definition: Compression of grammatical constructs.
+- code: SemSim
+  name: Semantic compression
+  level: strategy
+  parent: Compr
+  definition: Compression of semantic constructs.
+- code: Omiss
+  name: Omission
+  level: macro
+  definition: Material considered unnecessary for understanding an idea is removed.
+  aliases:
+  - deletion
+  - delete
+  - deleted
+  - removal
+  - remove
+  - omit
+  - filler
+  - well
+  - uh
+- code: OmiEle
+  name: Omission of elements
+  level: strategy
+  parent: Omiss
+  definition: Omission of elements related to nouns, verbs, complements, sentences,
+    rhetorical constructs, or diamesic elements.
+- code: OmiNoun
+  name: Noun omission
+  level: micro
+  parent: OmiEle
+  definition: A noun-related element is omitted.
+  examples:
+  - source: Dr Starmer is for real an interestingly new face in the current political
+      arena
+    simplified: Starmer is a new politician / Starmer changes politics
+- code: OmiVerb
+  name: Verb omission
+  level: micro
+  parent: OmiEle
+  definition: A verb-related element is omitted.
+  examples:
+  - source: Starmer is for real an interestingly new face in the current political
+      arena
+    simplified: Starmer is a new politician / Starmer changes politics
+- code: OmiComp
+  name: Complement omission
+  level: micro
+  parent: OmiEle
+  definition: A complement is omitted.
+  examples:
+  - source: Nowadays there is no one better than HRH King Charles III
+    simplified: King Charles III is the best
+- code: OmiSent
+  name: Sentence omission
+  level: micro
+  parent: OmiEle
+  definition: A sentence or incidental proposition is omitted.
+  examples:
+  - source: John went with Cristina to the cinema – I forgot the last time I also
+      went – and saw Spiderman
+    simplified: John and Cristina went to the cinema to see Spiderman / John and Cristina
+      saw Spiderman at the cinema / John and Cristina went to the cinema. They saw
+      Spiderman.
+- code: OmiRhe
+  name: Rhetorical-construct omission
+  level: micro
+  parent: OmiEle
+  definition: A rhetorical construct is omitted.
+  examples:
+  - source: it is not that I don’t like him, but he should think before speaking,
+      shouldn’t he?
+    simplified: George doesn’t think before he speaks
+- code: OmiDia
+  name: Diamesic-element omission
+  level: micro
+  parent: OmiEle
+  definition: Spoken-language fillers or diamesic elements are omitted.
+  examples:
+  - source: well, uh, I am hungry
+    simplified: I am hungry
+simplification_concepts:
+  words:
+    tenses:
+      prefer:
+      - simple present
+      - simple past
+      - simple future
+      - present perfect
+      avoid:
+      - other perfect tenses
+      - gerundive
+    nouns:
+      prefer:
+      - basic vocabulary
+      - stereotypical words
+      - concrete nouns
+      avoid:
+      - abstract words
+      - action nouns
+    adjectives:
+      rules:
+      - Use at most one adjective per noun.
+      avoid:
+      - adjectives that repeat the noun or sentence concept
+      - abstract adjectives
+      - uncommon adjectives
+      - high-register adjectives
+    adverbs:
+      rules:
+      - Use at most one adverb per verb.
+      avoid:
+      - adverbs that repeat the verb or sentence concept
+      - abstract adverbs
+      - uncommon adverbs
+      - high-register adverbs
+  syntax:
+    prefer:
+    - S-V-O structures
+    - linkers and time/space elements at the beginning
+    - other complements at the end
+    - direct object before indirect objects
+    - at most one simple subordinate or coordinate per sentence
+    - a new line after each sentence
+    avoid:
+    - relative clauses
+    - incidental clauses
+    - third conditional clauses
+    replacement: Replace avoided structures with simple linkers.
+  concepts:
+    rules:
+    - At most one concept per sentence.
+    - Avoid concepts that cannot be visualised.
+    - Avoid concepts that repeat the same idea.
+    - Prefer chronological order.
+    - Use theme-rheme structure.
+    - Avoid sub-plots.
+    - When possible, add a pictogram at the end of the sentence.
+    - Ask a validation team to approve the text.
+    - Add the Easy to Read language logo at the end of the process.
