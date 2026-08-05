@@ -14,7 +14,14 @@ class GradientShapExplainer:
     """Captum GradientSHAP, wrapped to match the framework's Explainer
     contract. Reuses the same approach already verified against the real
     mBERT model: averages over several randomly-perturbed baselines around
-    an all-PAD embedding, giving a SHAP-style approximation per token."""
+    an all-PAD embedding, giving a SHAP-style approximation per token.
+
+    NOTE: models loaded in float16 (e.g. the XLM-R/E5 encoders, for GPU
+    efficiency) trigger a dtype mismatch inside Captum's internal noise
+    generation, which expects float32. Fixed here by computing the
+    attribution in float32 and only casting back to the model's real
+    dtype right before the forward pass itself.
+    """
 
     name = "gradient_shap"
 
@@ -32,12 +39,13 @@ class GradientShapExplainer:
 
         explanations: list[Explanation] = []
         device = next(model.model.parameters()).device
+        model_dtype = next(model.model.parameters()).dtype
         tokenizer = model.tokenizer
         embedding_layer = model.model.get_input_embeddings()
 
         def forward_from_embeds(embeds, attention_mask, token_type_ids):
             return model.model(
-                inputs_embeds=embeds,
+                inputs_embeds=embeds.to(model_dtype),
                 attention_mask=attention_mask,
                 token_type_ids=token_type_ids,
             ).logits
@@ -62,9 +70,12 @@ class GradientShapExplainer:
                     "token_type_ids", torch.zeros_like(input_ids)
                 )
 
-                input_embeds = embedding_layer(input_ids)
+                # Compute in float32 throughout, since Captum's internal
+                # noise generation expects it; forward_from_embeds casts
+                # back to the model's real dtype right before the forward pass.
+                input_embeds = embedding_layer(input_ids).float()
                 baseline_ids = torch.full_like(input_ids, tokenizer.pad_token_id)
-                baseline_embeds = embedding_layer(baseline_ids)
+                baseline_embeds = embedding_layer(baseline_ids).float()
                 baseline_dist = baseline_embeds.repeat(self.n_baselines, 1, 1)
 
                 attributions = gshap.attribute(

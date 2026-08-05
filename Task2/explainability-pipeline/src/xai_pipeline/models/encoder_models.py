@@ -60,6 +60,7 @@ class EncoderModelAdapter:
         self.model = AutoModelForSequenceClassification.from_pretrained(self.repo_id, **load_kwargs)
         self.model.to(device)
         self.model.eval()
+        self._patch_get_input_embeddings()
 
         # Thresholds: prefer the model's own saved config, fall back to the
         # fixed values from Nouran's notebook if not present.
@@ -71,6 +72,28 @@ class EncoderModelAdapter:
             self.thresholds = np.array(
                 [FALLBACK_THRESHOLDS[self.model_choice][label] for label in LABELS]
             )
+
+    def _patch_get_input_embeddings(self) -> None:
+        """Some custom E2R wrapper classes (e.g. the XLM-R one) don't
+        implement get_input_embeddings(), which Integrated Gradients and
+        GradientSHAP both need. Try the real method first; if it's broken,
+        find the word/token embedding layer by name and patch it in
+        directly on this model instance."""
+        try:
+            self.model.get_input_embeddings()
+            return  # already works fine, nothing to do
+        except NotImplementedError:
+            pass
+
+        for name, module in self.model.named_modules():
+            if name.endswith("word_embeddings"):
+                self.model.get_input_embeddings = lambda m=module: m
+                return
+
+        raise RuntimeError(
+            f"Could not find a word embeddings layer to patch get_input_embeddings "
+            f"with, for model_choice={self.model_choice!r}."
+        )
 
     def _device(self) -> torch.device:
         return next(self.model.parameters()).device

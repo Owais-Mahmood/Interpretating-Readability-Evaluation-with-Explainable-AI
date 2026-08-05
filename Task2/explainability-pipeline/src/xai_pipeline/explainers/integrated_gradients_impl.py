@@ -2,7 +2,6 @@ from __future__ import annotations
 
 from collections.abc import Sequence
 
-import numpy as np
 import torch
 from captum.attr import LayerIntegratedGradients
 
@@ -34,11 +33,17 @@ class IntegratedGradientsExplainer:
         model,
         predictions: Sequence[Prediction],
     ) -> list[Explanation]:
+        # IMPORTANT: use the CURRENT taxonomy's label ordering (from the
+        # dataset adapter), not any one specific model's own LABELS list --
+        # different models can define LABELS in different orders, and using
+        # the wrong one silently computes the wrong target index rather
+        # than crashing. Verified this bug affected XLM-R/E5 runs before
+        # this fix (was explaining "Omission" while claiming "Synonymy").
+        from xai_pipeline.datasets.simplification import LABELS
+
         explanations: list[Explanation] = []
         device = next(model.model.parameters()).device
         tokenizer = model.tokenizer
-
-        from xai_pipeline.models.mbert_e2r import LABELS
 
         def forward_func(input_ids, attention_mask, token_type_ids):
             return self._model_forward(model, input_ids, attention_mask, token_type_ids)
