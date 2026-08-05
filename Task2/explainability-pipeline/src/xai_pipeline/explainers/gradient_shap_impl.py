@@ -35,7 +35,7 @@ class GradientShapExplainer:
         model,
         predictions: Sequence[Prediction],
     ) -> list[Explanation]:
-        from xai_pipeline.models.mbert_e2r import LABELS
+        from xai_pipeline.datasets.simplification import LABELS
 
         explanations: list[Explanation] = []
         device = next(model.model.parameters()).device

@@ -1,0 +1,18 @@
+Loaded 1 example(s).
+Loading XLM-R...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/393 [00:00<?, ?it/s]Loading weights:   2%|▏         | 7/393 [00:00<00:27, 13.97it/s]Loading weights:  54%|█████▎    | 211/393 [00:00<00:00, 459.86it/s]Loading weights:  83%|████████▎ | 328/393 [00:00<00:00, 537.54it/s]Loading weights: 100%|██████████| 393/393 [00:00<00:00, 454.07it/s]
+Loaded.
+[transformers] `use_return_dict` is deprecated! Use `return_dict` instead!
+Predicted: ['Synonymy', 'Compression', 'Omission']
+
+Trying Integrated Gradients...
+SUCCESS: produced 3 explanations
+  target=Synonymy, convergence_delta=-1.0671
+
+Trying GradientSHAP...
+SUCCESS: produced 3 explanations
+
+Trying Raw Attention...
+SUCCESS: produced 3 explanations

@@ -1,0 +1,95 @@
+Dataset validation messages: ["WARNING (not blocking): 12 pairs have zero labels under the new 6-label taxonomy (Transposition-only or Illocutionary-Change-only pairs, since neither maps to anything in this taxonomy): ['2989ab852a911f73', '3e6f5b9d43db7d3d', '6b2fbda34a617d93', '912f69180c3fd7a0', '9796ad923067ac5c', 'c81aaf6f8e37f6d7', '0864ecb4ccbf3735', '4479f26c2ced27c7', '3a176b3bd2177f57', 'e04fa0d9f0c51049', '563f735d22e6922a', '3dc4665f2055c981']"]
+Loaded 260 examples for the full run.
+
+########## xlmr ##########
+Loading xlmr...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/393 [00:00<?, ?it/s]Loading weights: 100%|██████████| 393/393 [00:00<00:00, 5296.71it/s]
+xlmr loaded successfully.
+Running predictions on all examples...
+[transformers] `use_return_dict` is deprecated! Use `return_dict` instead!
+Predictions done.
+
+[xlmr] Running integrated_gradients on all 260 examples...
+  [xlmr] integrated_gradients: 40/260 done (66s)
+  [xlmr] integrated_gradients: 80/260 done (125s)
+  [xlmr] integrated_gradients: 120/260 done (155s)
+  [xlmr] integrated_gradients: 160/260 done (201s)
+  [xlmr] integrated_gradients: 200/260 done (249s)
+  [xlmr] integrated_gradients: 240/260 done (352s)
+  [xlmr] integrated_gradients: 260/260 done (404s)
+[xlmr] integrated_gradients finished in 404s, 718 explanations.
+
+[xlmr] Running gradient_shap on all 260 examples...
+  [xlmr] gradient_shap: 40/260 done (32s)
+  [xlmr] gradient_shap: 80/260 done (60s)
+  [xlmr] gradient_shap: 120/260 done (75s)
+  [xlmr] gradient_shap: 160/260 done (97s)
+  [xlmr] gradient_shap: 200/260 done (120s)
+  [xlmr] gradient_shap: 240/260 done (170s)
+  [xlmr] gradient_shap: 260/260 done (195s)
+[xlmr] gradient_shap finished in 195s, 718 explanations.
+
+[xlmr] Running raw_attention on all 260 examples...
+  [xlmr] raw_attention: 40/260 done (0s)
+  [xlmr] raw_attention: 80/260 done (1s)
+  [xlmr] raw_attention: 120/260 done (1s)
+  [xlmr] raw_attention: 160/260 done (2s)
+  [xlmr] raw_attention: 200/260 done (2s)
+  [xlmr] raw_attention: 240/260 done (3s)
+  [xlmr] raw_attention: 260/260 done (3s)
+[xlmr] raw_attention finished in 3s, 718 explanations.
+[xlmr] Running plausibility evaluation...
+[xlmr] Evaluation produced 8508 metric records.
+
+########## e5 ##########
+Loading e5...
+Loading weights:   0%|          | 0/393 [00:00<?, ?it/s]Loading weights: 100%|██████████| 393/393 [00:00<00:00, 4760.36it/s]
+e5 loaded successfully.
+Running predictions on all examples...
+Predictions done.
+
+[e5] Running integrated_gradients on all 260 examples...
+  [e5] integrated_gradients: 40/260 done (61s)
+  [e5] integrated_gradients: 80/260 done (99s)
+  [e5] integrated_gradients: 120/260 done (142s)
+  [e5] integrated_gradients: 160/260 done (209s)
+  [e5] integrated_gradients: 200/260 done (266s)
+  [e5] integrated_gradients: 240/260 done (371s)
+  [e5] integrated_gradients: 260/260 done (425s)
+[e5] integrated_gradients finished in 425s, 758 explanations.
+
+[e5] Running gradient_shap on all 260 examples...
+  [e5] gradient_shap: 40/260 done (29s)
+  [e5] gradient_shap: 80/260 done (48s)
+  [e5] gradient_shap: 120/260 done (69s)
+  [e5] gradient_shap: 160/260 done (101s)
+  [e5] gradient_shap: 200/260 done (129s)
+  [e5] gradient_shap: 240/260 done (179s)
+  [e5] gradient_shap: 260/260 done (206s)
+[e5] gradient_shap finished in 206s, 758 explanations.
+
+[e5] Running raw_attention on all 260 examples...
+  [e5] raw_attention: 40/260 done (0s)
+  [e5] raw_attention: 80/260 done (1s)
+  [e5] raw_attention: 120/260 done (1s)
+  [e5] raw_attention: 160/260 done (2s)
+  [e5] raw_attention: 200/260 done (2s)
+  [e5] raw_attention: 240/260 done (3s)
+  [e5] raw_attention: 260/260 done (3s)
+[e5] raw_attention finished in 3s, 758 explanations.
+[e5] Running plausibility evaluation...
+[e5] Evaluation produced 8976 metric records.
+Saved full results to outputs/metrics/plausibility_encoders_full_results.csv
+Saved summary to outputs/tables/plausibility_summary_by_model_and_method.csv
+
+=== Summary: mean metric value by model and method ===
+metric                         auprc   f1_at_k  precision_at_k  recall_at_k
+model method                                                               
+e5    gradient_shap         0.250362  0.214291        0.214291     0.214291
+      integrated_gradients  0.249711  0.214168        0.214168     0.214168
+      raw_attention         0.268218  0.214704        0.214704     0.214704
+xlmr  gradient_shap         0.269939  0.227116        0.227116     0.227116
+      integrated_gradients  0.268021  0.225466        0.225466     0.225466
+      raw_attention         0.233592  0.195194        0.195194     0.195194

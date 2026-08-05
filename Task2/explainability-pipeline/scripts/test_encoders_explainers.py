@@ -11,7 +11,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "src"))
 
 from xai_pipeline.datasets.simplification import SimplificationDatasetAdapter
-from xai_pipeline.models.encoder_models import XLMRModelAdapter
+from xai_pipeline.models.encoder_models import E5ModelAdapter as XLMRModelAdapter
 from xai_pipeline.explainers.integrated_gradients_impl import IntegratedGradientsExplainer
 from xai_pipeline.explainers.gradient_shap_impl import GradientShapExplainer
 from xai_pipeline.explainers.raw_attention_impl import RawAttentionExplainer
