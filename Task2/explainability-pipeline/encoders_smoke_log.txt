@@ -1,0 +1,29 @@
+Dataset validation messages: ["WARNING (not blocking): 12 pairs have zero labels under the new 6-label taxonomy (Transposition-only or Illocutionary-Change-only pairs, since neither maps to anything in this taxonomy): ['2989ab852a911f73', '3e6f5b9d43db7d3d', '6b2fbda34a617d93', '912f69180c3fd7a0', '9796ad923067ac5c', 'c81aaf6f8e37f6d7', '0864ecb4ccbf3735', '4479f26c2ced27c7', '3a176b3bd2177f57', 'e04fa0d9f0c51049', '563f735d22e6922a', '3dc4665f2055c981']"]
+Loaded 3 examples for the smoke test.
+
+=== Loading XLM-R ===
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+[transformers] A new version of the following files was downloaded from https://huggingface.co/hannah-khallaf/e2r-strategy-xlmr-large-focal:
+- modeling_e2r_xlmr.py
+. Make sure to double-check they do not contain any added malicious code. To avoid downloading new versions of the code file, you can pin a revision.
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files:  50%|█████     | 1/2 [00:18<00:18, 18.12s/it]Fetching 2 files: 100%|██████████| 2/2 [00:22<00:00, 10.18s/it]Fetching 2 files: 100%|██████████| 2/2 [00:22<00:00, 11.37s/it]
+Loading weights:   0%|          | 0/393 [00:00<?, ?it/s]Loading weights:   2%|▏         | 7/393 [00:00<00:28, 13.62it/s]Loading weights:  59%|█████▉    | 231/393 [00:00<00:00, 490.11it/s]Loading weights:  90%|█████████ | 355/393 [00:00<00:00, 570.23it/s]Loading weights: 100%|██████████| 393/393 [00:00<00:00, 467.12it/s]
+XLM-R loaded successfully.
+Thresholds used: [0.46 0.46 0.46 0.46 0.46 0.46]
+[transformers] `use_return_dict` is deprecated! Use `return_dict` instead!
+4714cc6651769334: predicted ['Synonymy', 'Compression', 'Omission']
+d3145f304c3469e2: predicted ['Synonymy', 'Compression', 'Omission']
+27232ed14f973bec: predicted ['Synonymy', 'Compression', 'Omission']
+
+=== Loading E5 ===
+[transformers] A new version of the following files was downloaded from https://huggingface.co/hannah-khallaf/e2r-strategy-multilingual-e5-large-bce:
+- modeling_e2r_e5.py
+. Make sure to double-check they do not contain any added malicious code. To avoid downloading new versions of the code file, you can pin a revision.
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files:  50%|█████     | 1/2 [00:07<00:07,  7.79s/it]Fetching 2 files: 100%|██████████| 2/2 [00:49<00:00, 27.68s/it]Fetching 2 files: 100%|██████████| 2/2 [00:49<00:00, 24.70s/it]
+Loading weights:   0%|          | 0/393 [00:00<?, ?it/s]Loading weights:   2%|▏         | 7/393 [00:00<00:28, 13.64it/s]Loading weights:  58%|█████▊    | 227/393 [00:00<00:00, 483.34it/s]Loading weights:  89%|████████▉ | 350/393 [00:00<00:00, 571.99it/s]Loading weights: 100%|██████████| 393/393 [00:00<00:00, 466.33it/s]
+E5 loaded successfully.
+Thresholds used: [0.23 0.23 0.23 0.23 0.23 0.23]
+4714cc6651769334: predicted ['Synonymy', 'Compression', 'Omission']
+d3145f304c3469e2: predicted ['Synonymy', 'Modulation', 'Compression', 'Omission']
+27232ed14f973bec: predicted ['Synonymy', 'Compression', 'Omission']
