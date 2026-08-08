@@ -1,0 +1,72 @@
+Loaded 30 examples (sample of 30).
+Loading Qwen...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/339 [00:00<?, ?it/s]Loading weights:   0%|          | 1/339 [00:00<00:37,  8.95it/s]Loading weights:   1%|          | 2/339 [00:00<00:37,  9.01it/s]Loading weights:   5%|▍         | 16/339 [00:00<00:05, 60.61it/s]Loading weights:   9%|▉         | 30/339 [00:00<00:03, 84.34it/s]Loading weights:  15%|█▌        | 52/339 [00:00<00:02, 125.80it/s]Loading weights:  19%|█▉        | 66/339 [00:00<00:02, 122.76it/s]Loading weights:  26%|██▌       | 88/339 [00:00<00:01, 146.09it/s]Loading weights:  30%|███       | 103/339 [00:00<00:01, 137.44it/s]Loading weights:  37%|███▋      | 124/339 [00:01<00:01, 151.55it/s]Loading weights:  41%|████▏     | 140/339 [00:01<00:01, 144.44it/s]Loading weights:  47%|████▋     | 160/339 [00:01<00:01, 154.45it/s]Loading weights:  52%|█████▏    | 176/339 [00:01<00:01, 147.29it/s]Loading weights:  58%|█████▊    | 196/339 [00:01<00:00, 155.47it/s]Loading weights:  63%|██████▎   | 212/339 [00:01<00:00, 146.09it/s]Loading weights:  68%|██████▊   | 232/339 [00:01<00:00, 154.78it/s]Loading weights:  73%|███████▎  | 248/339 [00:01<00:00, 147.09it/s]Loading weights:  79%|███████▉  | 268/339 [00:01<00:00, 155.72it/s]Loading weights:  84%|████████▍ | 284/339 [00:02<00:00, 147.31it/s]Loading weights:  90%|████████▉ | 304/339 [00:02<00:00, 155.67it/s]Loading weights:  94%|█████████▍| 320/339 [00:02<00:00, 147.02it/s]Loading weights: 100%|██████████| 339/339 [00:02<00:00, 139.10it/s]
+Loaded.
+Running predictions...
+4714cc6651769334: predicted ['Synonymy', 'Compression', 'Omission']
+d3145f304c3469e2: predicted ['Compression', 'Omission']
+27232ed14f973bec: predicted ['Synonymy', 'Compression', 'Omission']
+0498438bbf75499b: predicted ['Synonymy', 'Compression', 'Omission']
+c8de7f52dd678b4d: predicted ['Synonymy', 'Compression', 'Omission']
+65c2a16c4f8b71dc: predicted []
+e6a78d3bf2d4e9fb: predicted ['Synonymy', 'Compression', 'Omission']
+6a4c94232b1d7c40: predicted ['Compression', 'Omission']
+1353894d0a209b8a: predicted ['Synonymy', 'Compression', 'Omission']
+7efaf284b208daee: predicted ['Compression', 'Omission']
+1f48b8837bec8ab6: predicted ['Synonymy', 'Compression', 'Omission']
+807b53a961809e7d: predicted ['Synonymy', 'Compression']
+0392ae03f066a894: predicted ['Synonymy', 'Compression', 'Omission']
+040f71d839ae75d8: predicted ['Synonymy', 'Compression', 'Syntactic Change']
+042e16733896f3cb: predicted ['Synonymy']
+0670039b4a17b8b0: predicted ['Synonymy']
+0a08fcb71a7ad371: predicted ['Synonymy']
+0db925627d2320ae: predicted ['Omission']
+0e743f80a519755a: predicted ['Synonymy']
+11046fa5908d72af: predicted ['Synonymy', 'Compression', 'Syntactic Change']
+118c25b0b4ea006a: predicted ['Synonymy', 'Compression', 'Explanation', 'Syntactic Change']
+12e23bd223f1277d: predicted ['Synonymy', 'Syntactic Change']
+140753ca0917b049: predicted ['Synonymy', 'Syntactic Change']
+17caea7d97169b0d: predicted ['Synonymy']
+1d85322e9ec39f32: predicted ['Synonymy', 'Compression', 'Syntactic Change']
+1ea1c8704bdcebbd: predicted ['Synonymy', 'Explanation']
+1fdcd74abc84d91d: predicted ['Synonymy', 'Syntactic Change']
+208df68e509030be: predicted ['Syntactic Change']
+212e7b1edbd0cb52: predicted ['Synonymy', 'Compression', 'Explanation', 'Syntactic Change']
+254503ad7601524f: predicted ['Synonymy', 'Syntactic Change']
+
+Running Integrated Gradients on 30 examples (this will take a while)...
+  1/30 examples done (110s elapsed, ~3204s remaining)
+  2/30 examples done (185s elapsed, ~2587s remaining)
+  3/30 examples done (346s elapsed, ~3111s remaining)
+  4/30 examples done (465s elapsed, ~3025s remaining)
+  5/30 examples done (567s elapsed, ~2833s remaining)
+  6/30 examples done (567s elapsed, ~2266s remaining)
+  7/30 examples done (686s elapsed, ~2254s remaining)
+  8/30 examples done (751s elapsed, ~2066s remaining)
+  9/30 examples done (883s elapsed, ~2060s remaining)
+  10/30 examples done (956s elapsed, ~1912s remaining)
+  11/30 examples done (1074s elapsed, ~1855s remaining)
+  12/30 examples done (1138s elapsed, ~1707s remaining)
+  13/30 examples done (1246s elapsed, ~1630s remaining)
+  14/30 examples done (1342s elapsed, ~1534s remaining)
+  15/30 examples done (1385s elapsed, ~1385s remaining)
+  16/30 examples done (1430s elapsed, ~1251s remaining)
+  17/30 examples done (1474s elapsed, ~1127s remaining)
+  18/30 examples done (1517s elapsed, ~1011s remaining)
+  19/30 examples done (1560s elapsed, ~903s remaining)
+  20/30 examples done (1663s elapsed, ~832s remaining)
+  21/30 examples done (1813s elapsed, ~777s remaining)
+  22/30 examples done (1885s elapsed, ~685s remaining)
+  23/30 examples done (1964s elapsed, ~598s remaining)
+  24/30 examples done (2007s elapsed, ~502s remaining)
+  25/30 examples done (2111s elapsed, ~422s remaining)
+  26/30 examples done (2201s elapsed, ~339s remaining)
+  27/30 examples done (2276s elapsed, ~253s remaining)
+  28/30 examples done (2304s elapsed, ~165s remaining)
+  29/30 examples done (2480s elapsed, ~86s remaining)
+  30/30 examples done (2554s elapsed, ~0s remaining)
+
+Finished in 2554s, 66 total explanations.
+Saved to outputs/explanations/qwen_ig_sample_results.csv
