@@ -1,0 +1,14 @@
+Loaded 1 example.
+Loading mBERT...
+Fetching 14 files:   0%|          | 0/14 [00:00<?, ?it/s]Fetching 14 files: 100%|██████████| 14/14 [00:00<00:00, 2254.74it/s]
+The repository /users/jpdj5670/.cache/huggingface/hub/models--hannah-khallaf--e2r-mbert-merged7/snapshots/4ab2169c94ac65591a5051c52fb58f946378484d contains custom code which must be executed to correctly load the model. You can inspect the repository content at /users/jpdj5670/.cache/huggingface/hub/models--hannah-khallaf--e2r-mbert-merged7/snapshots/4ab2169c94ac65591a5051c52fb58f946378484d .
+ You can inspect the repository content at https://hf.co//users/jpdj5670/.cache/huggingface/hub/models--hannah-khallaf--e2r-mbert-merged7/snapshots/4ab2169c94ac65591a5051c52fb58f946378484d.
+You can avoid this prompt in future by passing the argument `trust_remote_code=True`.
+
+Do you wish to run the custom code? [y/N] Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/201 [00:00<?, ?it/s]Loading weights: 100%|██████████| 201/201 [00:00<00:00, 10794.84it/s]
+Loaded.
+Predicted: ['Compression', 'Omission', 'Synonymy']
+Visualizing explanations for target label: Compression
+Saved outputs/visualizations/token_heatmap_single_method.png
+Saved outputs/visualizations/token_heatmap_side_by_side.png
