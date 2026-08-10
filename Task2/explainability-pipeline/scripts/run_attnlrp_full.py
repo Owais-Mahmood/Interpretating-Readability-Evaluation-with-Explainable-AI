@@ -68,7 +68,7 @@ def main():
     thresholds = np.array([FALLBACK_THRESHOLDS[model_choice][label] for label in LABELS])
     device = next(model.parameters()).device
 
-    # --- Step 1: predict all examples first ---
+    # Step 1: predict all examples first
     predictions = []
     for example in examples:
         prefix = "query: " if model_choice == "e5" else ""
@@ -88,7 +88,7 @@ def main():
         ))
     print("Predictions done.")
 
-    # --- Step 2: run AttnLRP on all (example, predicted label) pairs ---
+    # Step 2: run AttnLRP on all (example, predicted label) pairs
     explanations = []
     start = time.time()
     for i, (example, prediction) in enumerate(zip(examples, predictions)):
@@ -119,7 +119,7 @@ def main():
 
     print(f"AttnLRP finished in {time.time() - start:.0f}s, {len(explanations)} explanations.")
 
-    # --- Step 3: save raw explanations (tokens + scores), as Nouran asked ---
+    # Step 3: save raw explanations (tokens + scores), as Nouran asked
     rows = []
     for exp in explanations:
         rows.append({
@@ -132,9 +132,10 @@ def main():
     raw_df.to_csv(raw_path, index=False)
     print(f"Saved raw explanations to {raw_path}")
 
-    # --- Step 4: run plausibility evaluation for comparable metrics ---
+    # Step 4: run plausibility evaluation for comparable metrics
     from xai_pipeline.evaluators.plausibility_impl import PlausibilityEvaluator
-    evaluator = PlausibilityEvaluator(tokenizer=tokenizer)
+    prefix = "query: " if model_choice == "e5" else ""
+    evaluator = PlausibilityEvaluator(tokenizer=tokenizer, text_prefix=prefix)
     results = evaluator.evaluate(examples, predictions, explanations)
     results["model"] = model_choice
     metrics_path = Path(f"outputs/metrics/attnlrp_{model_choice}_plausibility_results.csv")

@@ -34,6 +34,8 @@ def main():
     sources = {
         "plausibility_mbert": metrics_dir / "plausibility_full_results.csv",
         "plausibility_encoders": metrics_dir / "plausibility_encoders_full_results.csv",
+        "attnlrp_xlmr": metrics_dir / "attnlrp_xlmr_plausibility_results.csv",
+        "attnlrp_e5": metrics_dir / "attnlrp_e5_plausibility_results.csv",
     }
 
     frames = []
