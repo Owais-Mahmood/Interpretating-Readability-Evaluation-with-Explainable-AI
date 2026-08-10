@@ -1,0 +1,28 @@
+Loaded 2 examples.
+Loading mBERT...
+Fetching 14 files:   0%|          | 0/14 [00:00<?, ?it/s]Fetching 14 files: 100%|██████████| 14/14 [00:00<00:00, 2248.10it/s]
+The repository /users/jpdj5670/.cache/huggingface/hub/models--hannah-khallaf--e2r-mbert-merged7/snapshots/4ab2169c94ac65591a5051c52fb58f946378484d contains custom code which must be executed to correctly load the model. You can inspect the repository content at /users/jpdj5670/.cache/huggingface/hub/models--hannah-khallaf--e2r-mbert-merged7/snapshots/4ab2169c94ac65591a5051c52fb58f946378484d .
+ You can inspect the repository content at https://hf.co//users/jpdj5670/.cache/huggingface/hub/models--hannah-khallaf--e2r-mbert-merged7/snapshots/4ab2169c94ac65591a5051c52fb58f946378484d.
+You can avoid this prompt in future by passing the argument `trust_remote_code=True`.
+
+Do you wish to run the custom code? [y/N] Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/201 [00:00<?, ?it/s]Loading weights: 100%|██████████| 201/201 [00:00<00:00, 11206.82it/s]
+Loaded.
+4714cc6651769334: predicted ['Compression', 'Omission', 'Synonymy']
+d3145f304c3469e2: predicted ['Compression', 'Omission']
+
+Running Integrated Gradients...
+Produced 5 explanations.
+
+Running deletion/insertion evaluation...
+      example_id slice_value        metric    value
+4714cc6651769334 Compression  deletion_auc 0.049433
+4714cc6651769334 Compression insertion_auc 0.046038
+4714cc6651769334    Omission  deletion_auc 0.825044
+4714cc6651769334    Omission insertion_auc 0.824130
+4714cc6651769334    Synonymy  deletion_auc 0.657169
+4714cc6651769334    Synonymy insertion_auc 0.665003
+d3145f304c3469e2 Compression  deletion_auc 0.076605
+d3145f304c3469e2 Compression insertion_auc 0.059046
+d3145f304c3469e2    Omission  deletion_auc 0.790567
+d3145f304c3469e2    Omission insertion_auc 0.755532
