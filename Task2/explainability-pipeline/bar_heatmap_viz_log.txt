@@ -1,0 +1,4 @@
+Saved outputs/visualizations/bar_chart_precision_by_method_model.png
+Saved outputs/visualizations/strategy_heatmap_e5.png
+Saved outputs/visualizations/strategy_heatmap_mbert.png
+Saved outputs/visualizations/strategy_heatmap_xlmr.png
