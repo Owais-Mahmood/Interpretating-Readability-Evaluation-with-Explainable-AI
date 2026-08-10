@@ -1,0 +1,16 @@
+Loaded 66 raw Qwen explanations.
+Loading Qwen tokenizer and reference implementation (lightweight, no model weights needed)...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loaded.
+Skipped (length mismatch, re-tokenization differs from saved): 0
+Skipped (couldn't locate sentence pair in prompt): 0
+Skipped (no gold tokens in sentence-pair range): 0
+Produced 264 metric records.
+Saved to outputs/metrics/qwen_plausibility_results.csv
+
+metric
+auprc             0.099989
+f1_at_k           0.082634
+precision_at_k    0.082634
+recall_at_k       0.082634
+Name: value, dtype: float64

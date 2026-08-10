@@ -179,6 +179,26 @@ mbert,raw_attention,Syntactic Change,auprc,0.28590884872912153,0.089543392385270
 mbert,raw_attention,Syntactic Change,f1_at_k,0.27508103893872987,0.10859932871766377,75
 mbert,raw_attention,Syntactic Change,precision_at_k,0.27508103893872987,0.10859932871766376,75
 mbert,raw_attention,Syntactic Change,recall_at_k,0.27508103893872987,0.10859932871766376,75
+qwen,integrated_gradients_qwen,Compression,auprc,0.12002492216048069,0.046705162778892605,17
+qwen,integrated_gradients_qwen,Compression,f1_at_k,0.08643730692905627,0.07611038071169672,17
+qwen,integrated_gradients_qwen,Compression,precision_at_k,0.08643730692905627,0.07611038071169672,17
+qwen,integrated_gradients_qwen,Compression,recall_at_k,0.08643730692905627,0.07611038071169672,17
+qwen,integrated_gradients_qwen,Explanation,auprc,0.0790995645026576,0.0067215393999841295,3
+qwen,integrated_gradients_qwen,Explanation,f1_at_k,0.03404022877707084,0.00502757354034485,3
+qwen,integrated_gradients_qwen,Explanation,precision_at_k,0.03404022877707084,0.00502757354034485,3
+qwen,integrated_gradients_qwen,Explanation,recall_at_k,0.03404022877707084,0.00502757354034485,3
+qwen,integrated_gradients_qwen,Omission,auprc,0.08108002139182506,0.027609316617545326,12
+qwen,integrated_gradients_qwen,Omission,f1_at_k,0.07836164439425307,0.06929937451761305,12
+qwen,integrated_gradients_qwen,Omission,precision_at_k,0.07836164439425307,0.06929937451761305,12
+qwen,integrated_gradients_qwen,Omission,recall_at_k,0.07836164439425307,0.06929937451761305,12
+qwen,integrated_gradients_qwen,Synonymy,auprc,0.09523309530356322,0.04858705600222994,24
+qwen,integrated_gradients_qwen,Synonymy,f1_at_k,0.07683157988646448,0.07813701302902622,24
+qwen,integrated_gradients_qwen,Synonymy,precision_at_k,0.07683157988646448,0.07813701302902622,24
+qwen,integrated_gradients_qwen,Synonymy,recall_at_k,0.07683157988646448,0.07813701302902622,24
+qwen,integrated_gradients_qwen,Syntactic Change,auprc,0.1062975240646715,0.05467161067316079,10
+qwen,integrated_gradients_qwen,Syntactic Change,f1_at_k,0.10979946548210728,0.10260415225322292,10
+qwen,integrated_gradients_qwen,Syntactic Change,precision_at_k,0.10979946548210728,0.10260415225322292,10
+qwen,integrated_gradients_qwen,Syntactic Change,recall_at_k,0.10979946548210728,0.10260415225322292,10
 xlmr,attnlrp,Compression,auprc,0.3207435602070807,0.12555785235502695,90
 xlmr,attnlrp,Compression,f1_at_k,0.299789732111542,0.14130796772623988,90
 xlmr,attnlrp,Compression,precision_at_k,0.299789732111542,0.14130796772623988,90
