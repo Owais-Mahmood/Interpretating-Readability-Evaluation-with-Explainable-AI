@@ -1,0 +1,21 @@
+Loading mBERT for the curve plot...
+Fetching 14 files:   0%|          | 0/14 [00:00<?, ?it/s]Fetching 14 files: 100%|██████████| 14/14 [00:00<00:00, 2229.23it/s]
+The repository /users/jpdj5670/.cache/huggingface/hub/models--hannah-khallaf--e2r-mbert-merged7/snapshots/4ab2169c94ac65591a5051c52fb58f946378484d contains custom code which must be executed to correctly load the model. You can inspect the repository content at /users/jpdj5670/.cache/huggingface/hub/models--hannah-khallaf--e2r-mbert-merged7/snapshots/4ab2169c94ac65591a5051c52fb58f946378484d .
+ You can inspect the repository content at https://hf.co//users/jpdj5670/.cache/huggingface/hub/models--hannah-khallaf--e2r-mbert-merged7/snapshots/4ab2169c94ac65591a5051c52fb58f946378484d.
+You can avoid this prompt in future by passing the argument `trust_remote_code=True`.
+
+Do you wish to run the custom code? [y/N] Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/201 [00:00<?, ?it/s]Loading weights: 100%|██████████| 201/201 [00:00<00:00, 10642.75it/s]
+Loaded.
+Saved outputs/visualizations/deletion_insertion_curve.png
+Best example: c8ec09f4bdb89da4, target=Omission, precision=0.600
+Worst example: c8de7f52dd678b4d, target=Compression, precision=0.000
+Loading mBERT...
+Fetching 14 files:   0%|          | 0/14 [00:00<?, ?it/s]Fetching 14 files: 100%|██████████| 14/14 [00:00<00:00, 1648.06it/s]
+The repository /users/jpdj5670/.cache/huggingface/hub/models--hannah-khallaf--e2r-mbert-merged7/snapshots/4ab2169c94ac65591a5051c52fb58f946378484d contains custom code which must be executed to correctly load the model. You can inspect the repository content at /users/jpdj5670/.cache/huggingface/hub/models--hannah-khallaf--e2r-mbert-merged7/snapshots/4ab2169c94ac65591a5051c52fb58f946378484d .
+ You can inspect the repository content at https://hf.co//users/jpdj5670/.cache/huggingface/hub/models--hannah-khallaf--e2r-mbert-merged7/snapshots/4ab2169c94ac65591a5051c52fb58f946378484d.
+You can avoid this prompt in future by passing the argument `trust_remote_code=True`.
+
+Do you wish to run the custom code? [y/N] Loading weights:   0%|          | 0/201 [00:00<?, ?it/s]Loading weights: 100%|██████████| 201/201 [00:00<00:00, 10359.36it/s]
+Loaded.
+Saved outputs/visualizations/error_analysis_success_vs_failure.png
