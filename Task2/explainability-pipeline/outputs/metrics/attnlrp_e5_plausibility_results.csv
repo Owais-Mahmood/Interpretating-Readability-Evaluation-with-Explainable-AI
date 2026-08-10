@@ -1,0 +1,81 @@
+run_id,example_id,method,metric,value,slice_name,slice_value,metadata,model
+task2_plausibility,27232ed14f973bec,attnlrp,precision_at_k,0.15625,target,Synonymy,"{'n_gold_tokens': 32, 'k': 32}",e5
+task2_plausibility,27232ed14f973bec,attnlrp,recall_at_k,0.15625,target,Synonymy,"{'n_gold_tokens': 32, 'k': 32}",e5
+task2_plausibility,27232ed14f973bec,attnlrp,f1_at_k,0.15625,target,Synonymy,"{'n_gold_tokens': 32, 'k': 32}",e5
+task2_plausibility,27232ed14f973bec,attnlrp,auprc,0.15390838360001793,target,Synonymy,"{'n_gold_tokens': 32, 'k': 32}",e5
+task2_plausibility,27232ed14f973bec,attnlrp,precision_at_k,0.25,target,Compression,"{'n_gold_tokens': 32, 'k': 32}",e5
+task2_plausibility,27232ed14f973bec,attnlrp,recall_at_k,0.25,target,Compression,"{'n_gold_tokens': 32, 'k': 32}",e5
+task2_plausibility,27232ed14f973bec,attnlrp,f1_at_k,0.25,target,Compression,"{'n_gold_tokens': 32, 'k': 32}",e5
+task2_plausibility,27232ed14f973bec,attnlrp,auprc,0.18070815633451806,target,Compression,"{'n_gold_tokens': 32, 'k': 32}",e5
+task2_plausibility,27232ed14f973bec,attnlrp,precision_at_k,0.25,target,Omission,"{'n_gold_tokens': 32, 'k': 32}",e5
+task2_plausibility,27232ed14f973bec,attnlrp,recall_at_k,0.25,target,Omission,"{'n_gold_tokens': 32, 'k': 32}",e5
+task2_plausibility,27232ed14f973bec,attnlrp,f1_at_k,0.25,target,Omission,"{'n_gold_tokens': 32, 'k': 32}",e5
+task2_plausibility,27232ed14f973bec,attnlrp,auprc,0.2038260847118412,target,Omission,"{'n_gold_tokens': 32, 'k': 32}",e5
+task2_plausibility,a4b4c81ab3ff1c8a,attnlrp,precision_at_k,0.4125,target,Synonymy,"{'n_gold_tokens': 80, 'k': 80}",e5
+task2_plausibility,a4b4c81ab3ff1c8a,attnlrp,recall_at_k,0.4125,target,Synonymy,"{'n_gold_tokens': 80, 'k': 80}",e5
+task2_plausibility,a4b4c81ab3ff1c8a,attnlrp,f1_at_k,0.4125,target,Synonymy,"{'n_gold_tokens': 80, 'k': 80}",e5
+task2_plausibility,a4b4c81ab3ff1c8a,attnlrp,auprc,0.42772972282731686,target,Synonymy,"{'n_gold_tokens': 80, 'k': 80}",e5
+task2_plausibility,a4b4c81ab3ff1c8a,attnlrp,precision_at_k,0.3375,target,Modulation,"{'n_gold_tokens': 80, 'k': 80}",e5
+task2_plausibility,a4b4c81ab3ff1c8a,attnlrp,recall_at_k,0.3375,target,Modulation,"{'n_gold_tokens': 80, 'k': 80}",e5
+task2_plausibility,a4b4c81ab3ff1c8a,attnlrp,f1_at_k,0.3375,target,Modulation,"{'n_gold_tokens': 80, 'k': 80}",e5
+task2_plausibility,a4b4c81ab3ff1c8a,attnlrp,auprc,0.4047376307207677,target,Modulation,"{'n_gold_tokens': 80, 'k': 80}",e5
+task2_plausibility,a4b4c81ab3ff1c8a,attnlrp,precision_at_k,0.35,target,Compression,"{'n_gold_tokens': 80, 'k': 80}",e5
+task2_plausibility,a4b4c81ab3ff1c8a,attnlrp,recall_at_k,0.35,target,Compression,"{'n_gold_tokens': 80, 'k': 80}",e5
+task2_plausibility,a4b4c81ab3ff1c8a,attnlrp,f1_at_k,0.35,target,Compression,"{'n_gold_tokens': 80, 'k': 80}",e5
+task2_plausibility,a4b4c81ab3ff1c8a,attnlrp,auprc,0.37842283911835684,target,Compression,"{'n_gold_tokens': 80, 'k': 80}",e5
+task2_plausibility,a4b4c81ab3ff1c8a,attnlrp,precision_at_k,0.2875,target,Explanation,"{'n_gold_tokens': 80, 'k': 80}",e5
+task2_plausibility,a4b4c81ab3ff1c8a,attnlrp,recall_at_k,0.2875,target,Explanation,"{'n_gold_tokens': 80, 'k': 80}",e5
+task2_plausibility,a4b4c81ab3ff1c8a,attnlrp,f1_at_k,0.2875,target,Explanation,"{'n_gold_tokens': 80, 'k': 80}",e5
+task2_plausibility,a4b4c81ab3ff1c8a,attnlrp,auprc,0.3774759683596444,target,Explanation,"{'n_gold_tokens': 80, 'k': 80}",e5
+task2_plausibility,a4b4c81ab3ff1c8a,attnlrp,precision_at_k,0.3375,target,Syntactic Change,"{'n_gold_tokens': 80, 'k': 80}",e5
+task2_plausibility,a4b4c81ab3ff1c8a,attnlrp,recall_at_k,0.3375,target,Syntactic Change,"{'n_gold_tokens': 80, 'k': 80}",e5
+task2_plausibility,a4b4c81ab3ff1c8a,attnlrp,f1_at_k,0.3375,target,Syntactic Change,"{'n_gold_tokens': 80, 'k': 80}",e5
+task2_plausibility,a4b4c81ab3ff1c8a,attnlrp,auprc,0.3361894146301561,target,Syntactic Change,"{'n_gold_tokens': 80, 'k': 80}",e5
+task2_plausibility,e5bc02d62cc000ba,attnlrp,precision_at_k,0.21951219512195122,target,Synonymy,"{'n_gold_tokens': 41, 'k': 41}",e5
+task2_plausibility,e5bc02d62cc000ba,attnlrp,recall_at_k,0.21951219512195122,target,Synonymy,"{'n_gold_tokens': 41, 'k': 41}",e5
+task2_plausibility,e5bc02d62cc000ba,attnlrp,f1_at_k,0.21951219512195122,target,Synonymy,"{'n_gold_tokens': 41, 'k': 41}",e5
+task2_plausibility,e5bc02d62cc000ba,attnlrp,auprc,0.2372048120767987,target,Synonymy,"{'n_gold_tokens': 41, 'k': 41}",e5
+task2_plausibility,e5bc02d62cc000ba,attnlrp,precision_at_k,0.21951219512195122,target,Modulation,"{'n_gold_tokens': 41, 'k': 41}",e5
+task2_plausibility,e5bc02d62cc000ba,attnlrp,recall_at_k,0.21951219512195122,target,Modulation,"{'n_gold_tokens': 41, 'k': 41}",e5
+task2_plausibility,e5bc02d62cc000ba,attnlrp,f1_at_k,0.21951219512195122,target,Modulation,"{'n_gold_tokens': 41, 'k': 41}",e5
+task2_plausibility,e5bc02d62cc000ba,attnlrp,auprc,0.2659527484566949,target,Modulation,"{'n_gold_tokens': 41, 'k': 41}",e5
+task2_plausibility,e5bc02d62cc000ba,attnlrp,precision_at_k,0.21951219512195122,target,Compression,"{'n_gold_tokens': 41, 'k': 41}",e5
+task2_plausibility,e5bc02d62cc000ba,attnlrp,recall_at_k,0.21951219512195122,target,Compression,"{'n_gold_tokens': 41, 'k': 41}",e5
+task2_plausibility,e5bc02d62cc000ba,attnlrp,f1_at_k,0.21951219512195122,target,Compression,"{'n_gold_tokens': 41, 'k': 41}",e5
+task2_plausibility,e5bc02d62cc000ba,attnlrp,auprc,0.19935489521308736,target,Compression,"{'n_gold_tokens': 41, 'k': 41}",e5
+task2_plausibility,e5bc02d62cc000ba,attnlrp,precision_at_k,0.1951219512195122,target,Explanation,"{'n_gold_tokens': 41, 'k': 41}",e5
+task2_plausibility,e5bc02d62cc000ba,attnlrp,recall_at_k,0.1951219512195122,target,Explanation,"{'n_gold_tokens': 41, 'k': 41}",e5
+task2_plausibility,e5bc02d62cc000ba,attnlrp,f1_at_k,0.1951219512195122,target,Explanation,"{'n_gold_tokens': 41, 'k': 41}",e5
+task2_plausibility,e5bc02d62cc000ba,attnlrp,auprc,0.21055968010731066,target,Explanation,"{'n_gold_tokens': 41, 'k': 41}",e5
+task2_plausibility,e5bc02d62cc000ba,attnlrp,precision_at_k,0.17073170731707318,target,Syntactic Change,"{'n_gold_tokens': 41, 'k': 41}",e5
+task2_plausibility,e5bc02d62cc000ba,attnlrp,recall_at_k,0.17073170731707318,target,Syntactic Change,"{'n_gold_tokens': 41, 'k': 41}",e5
+task2_plausibility,e5bc02d62cc000ba,attnlrp,f1_at_k,0.17073170731707318,target,Syntactic Change,"{'n_gold_tokens': 41, 'k': 41}",e5
+task2_plausibility,e5bc02d62cc000ba,attnlrp,auprc,0.22528122314175622,target,Syntactic Change,"{'n_gold_tokens': 41, 'k': 41}",e5
+task2_plausibility,e5bc02d62cc000ba,attnlrp,precision_at_k,0.14634146341463414,target,Omission,"{'n_gold_tokens': 41, 'k': 41}",e5
+task2_plausibility,e5bc02d62cc000ba,attnlrp,recall_at_k,0.14634146341463414,target,Omission,"{'n_gold_tokens': 41, 'k': 41}",e5
+task2_plausibility,e5bc02d62cc000ba,attnlrp,f1_at_k,0.14634146341463414,target,Omission,"{'n_gold_tokens': 41, 'k': 41}",e5
+task2_plausibility,e5bc02d62cc000ba,attnlrp,auprc,0.2118350835669632,target,Omission,"{'n_gold_tokens': 41, 'k': 41}",e5
+task2_plausibility,3c14ec055d1f0d11,attnlrp,precision_at_k,0.35,target,Synonymy,"{'n_gold_tokens': 60, 'k': 60}",e5
+task2_plausibility,3c14ec055d1f0d11,attnlrp,recall_at_k,0.35,target,Synonymy,"{'n_gold_tokens': 60, 'k': 60}",e5
+task2_plausibility,3c14ec055d1f0d11,attnlrp,f1_at_k,0.35,target,Synonymy,"{'n_gold_tokens': 60, 'k': 60}",e5
+task2_plausibility,3c14ec055d1f0d11,attnlrp,auprc,0.354444471805884,target,Synonymy,"{'n_gold_tokens': 60, 'k': 60}",e5
+task2_plausibility,3c14ec055d1f0d11,attnlrp,precision_at_k,0.36666666666666664,target,Modulation,"{'n_gold_tokens': 60, 'k': 60}",e5
+task2_plausibility,3c14ec055d1f0d11,attnlrp,recall_at_k,0.36666666666666664,target,Modulation,"{'n_gold_tokens': 60, 'k': 60}",e5
+task2_plausibility,3c14ec055d1f0d11,attnlrp,f1_at_k,0.36666666666666664,target,Modulation,"{'n_gold_tokens': 60, 'k': 60}",e5
+task2_plausibility,3c14ec055d1f0d11,attnlrp,auprc,0.3372145269129798,target,Modulation,"{'n_gold_tokens': 60, 'k': 60}",e5
+task2_plausibility,3c14ec055d1f0d11,attnlrp,precision_at_k,0.2833333333333333,target,Compression,"{'n_gold_tokens': 60, 'k': 60}",e5
+task2_plausibility,3c14ec055d1f0d11,attnlrp,recall_at_k,0.2833333333333333,target,Compression,"{'n_gold_tokens': 60, 'k': 60}",e5
+task2_plausibility,3c14ec055d1f0d11,attnlrp,f1_at_k,0.2833333333333333,target,Compression,"{'n_gold_tokens': 60, 'k': 60}",e5
+task2_plausibility,3c14ec055d1f0d11,attnlrp,auprc,0.25285162130102135,target,Compression,"{'n_gold_tokens': 60, 'k': 60}",e5
+task2_plausibility,3c14ec055d1f0d11,attnlrp,precision_at_k,0.3,target,Explanation,"{'n_gold_tokens': 60, 'k': 60}",e5
+task2_plausibility,3c14ec055d1f0d11,attnlrp,recall_at_k,0.3,target,Explanation,"{'n_gold_tokens': 60, 'k': 60}",e5
+task2_plausibility,3c14ec055d1f0d11,attnlrp,f1_at_k,0.3,target,Explanation,"{'n_gold_tokens': 60, 'k': 60}",e5
+task2_plausibility,3c14ec055d1f0d11,attnlrp,auprc,0.3159124756366695,target,Explanation,"{'n_gold_tokens': 60, 'k': 60}",e5
+task2_plausibility,3c14ec055d1f0d11,attnlrp,precision_at_k,0.3,target,Syntactic Change,"{'n_gold_tokens': 60, 'k': 60}",e5
+task2_plausibility,3c14ec055d1f0d11,attnlrp,recall_at_k,0.3,target,Syntactic Change,"{'n_gold_tokens': 60, 'k': 60}",e5
+task2_plausibility,3c14ec055d1f0d11,attnlrp,f1_at_k,0.3,target,Syntactic Change,"{'n_gold_tokens': 60, 'k': 60}",e5
+task2_plausibility,3c14ec055d1f0d11,attnlrp,auprc,0.2926031456505608,target,Syntactic Change,"{'n_gold_tokens': 60, 'k': 60}",e5
+task2_plausibility,3c14ec055d1f0d11,attnlrp,precision_at_k,0.4,target,Omission,"{'n_gold_tokens': 60, 'k': 60}",e5
+task2_plausibility,3c14ec055d1f0d11,attnlrp,recall_at_k,0.4,target,Omission,"{'n_gold_tokens': 60, 'k': 60}",e5
+task2_plausibility,3c14ec055d1f0d11,attnlrp,f1_at_k,0.4000000000000001,target,Omission,"{'n_gold_tokens': 60, 'k': 60}",e5
+task2_plausibility,3c14ec055d1f0d11,attnlrp,auprc,0.3573621482241285,target,Omission,"{'n_gold_tokens': 60, 'k': 60}",e5

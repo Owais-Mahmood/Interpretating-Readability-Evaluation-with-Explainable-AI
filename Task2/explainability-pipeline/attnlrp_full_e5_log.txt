@@ -1,0 +1,24 @@
+Loaded 281 examples.
+Loading e5 (hannah-khallaf/e2r-strategy-multilingual-e5-large-bce)...
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00, 11.47it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00, 11.46it/s]
+Loaded.
+Patched: LayerNorm, Dropout, XLMRobertaSelfAttention, XLMRobertaSdpaSelfAttention, XLMRobertaIntermediate
+Predictions done.
+  40/281 done (33s elapsed)
+  80/281 done (51s elapsed)
+  120/281 done (66s elapsed)
+  160/281 done (97s elapsed)
+  200/281 done (132s elapsed)
+  240/281 done (163s elapsed)
+  280/281 done (214s elapsed)
+  281/281 done (216s elapsed)
+AttnLRP finished in 216s, 787 explanations.
+Saved raw explanations to outputs/explanations/attnlrp_e5_raw_explanations.csv
+Saved plausibility metrics to outputs/metrics/attnlrp_e5_plausibility_results.csv
+
+metric
+auprc             0.286179
+f1_at_k           0.277599
+precision_at_k    0.277599
+recall_at_k       0.277599
+Name: value, dtype: float64
