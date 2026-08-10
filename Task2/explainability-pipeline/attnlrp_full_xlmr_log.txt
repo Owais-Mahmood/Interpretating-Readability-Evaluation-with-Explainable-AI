@@ -1,0 +1,24 @@
+Loaded 281 examples.
+Loading xlmr (hannah-khallaf/e2r-strategy-xlmr-large-focal)...
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00, 11.51it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00, 11.49it/s]
+Loaded.
+Patched: LayerNorm, Dropout, XLMRobertaSelfAttention, XLMRobertaSdpaSelfAttention, XLMRobertaIntermediate
+Predictions done.
+  40/281 done (23s elapsed)
+  80/281 done (48s elapsed)
+  120/281 done (66s elapsed)
+  160/281 done (86s elapsed)
+  200/281 done (108s elapsed)
+  240/281 done (137s elapsed)
+  280/281 done (183s elapsed)
+  281/281 done (185s elapsed)
+AttnLRP finished in 185s, 761 explanations.
+Saved raw explanations to outputs/explanations/attnlrp_xlmr_raw_explanations.csv
+Saved plausibility metrics to outputs/metrics/attnlrp_xlmr_plausibility_results.csv
+
+metric
+auprc             0.331245
+f1_at_k           0.291175
+precision_at_k    0.291175
+recall_at_k       0.291175
+Name: value, dtype: float64
