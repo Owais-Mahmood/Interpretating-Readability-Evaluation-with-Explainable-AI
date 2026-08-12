@@ -103,10 +103,6 @@ mbert,gradient_shap,Explanation,auprc,0.28143450861506636,0.08203093282359579,77
 mbert,gradient_shap,Explanation,f1_at_k,0.2458672827163043,0.11702008783087142,77
 mbert,gradient_shap,Explanation,precision_at_k,0.2458672827163043,0.11702008783087142,77
 mbert,gradient_shap,Explanation,recall_at_k,0.2458672827163043,0.11702008783087142,77
-mbert,gradient_shap,Illocutionary Change,auprc,0.30874823223285675,0.09471179187754646,65
-mbert,gradient_shap,Illocutionary Change,f1_at_k,0.27991369993109705,0.10767472666145828,65
-mbert,gradient_shap,Illocutionary Change,precision_at_k,0.27991369993109705,0.10767472666145828,65
-mbert,gradient_shap,Illocutionary Change,recall_at_k,0.27991369993109705,0.10767472666145828,65
 mbert,gradient_shap,Modulation,auprc,0.26620251099850883,0.0859718289357014,135
 mbert,gradient_shap,Modulation,f1_at_k,0.23448389948726467,0.12598143253944402,135
 mbert,gradient_shap,Modulation,precision_at_k,0.23448389948726467,0.12598143253944402,135
@@ -131,10 +127,6 @@ mbert,integrated_gradients,Explanation,auprc,0.28544941371701116,0.0953083103214
 mbert,integrated_gradients,Explanation,f1_at_k,0.2491079819549798,0.12504104652381792,77
 mbert,integrated_gradients,Explanation,precision_at_k,0.2491079819549798,0.12504104652381792,77
 mbert,integrated_gradients,Explanation,recall_at_k,0.2491079819549798,0.12504104652381792,77
-mbert,integrated_gradients,Illocutionary Change,auprc,0.305027664778181,0.08120500412740443,65
-mbert,integrated_gradients,Illocutionary Change,f1_at_k,0.29128748758351886,0.10182504828768305,65
-mbert,integrated_gradients,Illocutionary Change,precision_at_k,0.29128748758351886,0.10182504828768305,65
-mbert,integrated_gradients,Illocutionary Change,recall_at_k,0.29128748758351886,0.10182504828768305,65
 mbert,integrated_gradients,Modulation,auprc,0.26527249452878054,0.08564406770314557,135
 mbert,integrated_gradients,Modulation,f1_at_k,0.2367309615737038,0.12474654882422026,135
 mbert,integrated_gradients,Modulation,precision_at_k,0.2367309615737038,0.12474654882422026,135
@@ -159,10 +151,6 @@ mbert,raw_attention,Explanation,auprc,0.27670826331133613,0.0883723885833544,77
 mbert,raw_attention,Explanation,f1_at_k,0.24738479594563126,0.12226104860696846,77
 mbert,raw_attention,Explanation,precision_at_k,0.24738479594563123,0.12226104860696846,77
 mbert,raw_attention,Explanation,recall_at_k,0.24738479594563123,0.12226104860696846,77
-mbert,raw_attention,Illocutionary Change,auprc,0.2751976588058174,0.06886845720678304,65
-mbert,raw_attention,Illocutionary Change,f1_at_k,0.2596821600314147,0.10384120527737016,65
-mbert,raw_attention,Illocutionary Change,precision_at_k,0.2596821600314147,0.10384120527737016,65
-mbert,raw_attention,Illocutionary Change,recall_at_k,0.2596821600314147,0.10384120527737016,65
 mbert,raw_attention,Modulation,auprc,0.2639139138971386,0.08177299861384021,135
 mbert,raw_attention,Modulation,f1_at_k,0.2381034699773859,0.11486247915165544,135
 mbert,raw_attention,Modulation,precision_at_k,0.2381034699773859,0.11486247915165544,135

@@ -59,11 +59,30 @@ def main():
     else:
         combined["model"] = combined["model"].fillna("mbert")
 
+    # "Illocutionary Change" is part of mBERT's legacy 7-label taxonomy
+    # (its trained classification head has 7 output neurons baked into
+    # the model weights), not the current 6-label taxonomy used by every
+    # other model. Per Nouran's instruction, this is separated out from
+    # the primary analysis rather than mixed into the main comparison --
+    # it's not deleted, just kept visible on its own as a clearly-labeled,
+    # non-comparable legacy result.
+    if "slice_value" in combined.columns:
+        legacy_mask = combined["slice_value"] == "Illocutionary Change"
+        legacy_results = combined[legacy_mask].copy()
+        combined = combined[~legacy_mask].copy()
+
+        if len(legacy_results) > 0:
+            legacy_path = outputs_dir / "tables" / "legacy_illocutionary_change_mbert_only.csv"
+            legacy_results.to_csv(legacy_path, index=False)
+            print(f"Separated {len(legacy_results)} legacy 'Illocutionary Change' rows "
+                  f"(mBERT 7-label taxonomy only, not comparable to the current 6-label "
+                  f"taxonomy) -- saved separately to {legacy_path}")
+
     print()
-    print(f"Total combined metric records: {len(combined)}")
+    print(f"Total combined metric records (primary, 6-label taxonomy only): {len(combined)}")
     print()
 
-    # --- Overall comparison table: mean metric value by model x method ---
+    # Overall comparison table: mean metric value by model x method
     overall = combined.groupby(["model", "method", "metric"])["value"].agg(["mean", "std", "count"])
     overall_path = outputs_dir / "tables" / "comparison_overall.csv"
     overall_path.parent.mkdir(parents=True, exist_ok=True)

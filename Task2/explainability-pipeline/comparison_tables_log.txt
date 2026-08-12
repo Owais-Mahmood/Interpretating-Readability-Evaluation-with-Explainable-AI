@@ -3,8 +3,9 @@ Loaded 17484 rows from outputs/metrics/plausibility_encoders_full_results.csv
 Loaded 3000 rows from outputs/metrics/attnlrp_xlmr_plausibility_results.csv
 Loaded 3104 rows from outputs/metrics/attnlrp_e5_plausibility_results.csv
 Loaded 264 rows from outputs/metrics/qwen_plausibility_results.csv
+Separated 780 legacy 'Illocutionary Change' rows (mBERT 7-label taxonomy only, not comparable to the current 6-label taxonomy) -- saved separately to outputs/tables/legacy_illocutionary_change_mbert_only.csv
 
-Total combined metric records: 32504
+Total combined metric records (primary, 6-label taxonomy only): 31724
 
 Saved overall comparison table to outputs/tables/comparison_overall.csv
 
@@ -15,9 +16,9 @@ e5    attnlrp                    0.309927  0.275371        0.275371     0.275371
       gradient_shap              0.250362  0.214291        0.214291     0.214291
       integrated_gradients       0.249711  0.214168        0.214168     0.214168
       raw_attention              0.268218  0.214704        0.214704     0.214704
-mbert gradient_shap              0.266347  0.236403        0.236403     0.236403
-      integrated_gradients       0.265497  0.237344        0.237344     0.237344
-      raw_attention              0.263178  0.240613        0.240613     0.240613
+mbert gradient_shap              0.262146  0.232091        0.232091     0.232091
+      integrated_gradients       0.261580  0.231999        0.231999     0.231999
+      raw_attention              0.261987  0.238724        0.238724     0.238724
 qwen  integrated_gradients_qwen  0.099989  0.082634        0.082634     0.082634
 xlmr  attnlrp                    0.331245  0.291175        0.291175     0.291175
       gradient_shap              0.269939  0.227116        0.227116     0.227116
@@ -27,17 +28,17 @@ xlmr  attnlrp                    0.331245  0.291175        0.291175     0.291175
 Saved per-strategy breakdown to outputs/tables/comparison_per_strategy.csv
 
 === Per-strategy breakdown (mean value, precision_at_k only, as an example) ===
-slice_value                      Compression  Explanation  Illocutionary Change  Modulation  Omission  Synonymy  Syntactic Change
-model method                                                                                                                     
-e5    attnlrp                       0.276419     0.288633                   NaN    0.277197  0.260215  0.267564          0.298049
-      gradient_shap                 0.203172     0.237529                   NaN    0.213763  0.201274  0.208272          0.238623
-      integrated_gradients          0.205551     0.235641                   NaN    0.213615  0.210097  0.205276          0.238726
-      raw_attention                 0.201738     0.240223                   NaN    0.219716  0.184600  0.217537          0.206370
-mbert gradient_shap                 0.222668     0.245867              0.279914    0.234484  0.230872  0.223191          0.252888
-      integrated_gradients          0.221138     0.249108              0.291287    0.236731  0.245337  0.216325          0.254378
-      raw_attention                 0.233166     0.247385              0.259682    0.238103  0.247642  0.222445          0.275081
-qwen  integrated_gradients_qwen     0.086437     0.034040                   NaN         NaN  0.078362  0.076832          0.109799
-xlmr  attnlrp                       0.299790     0.328109                   NaN    0.288925  0.308184  0.270566          0.300013
-      gradient_shap                 0.207007     0.256171                   NaN    0.244661  0.223743  0.214316          0.228559
-      integrated_gradients          0.210879     0.257415                   NaN    0.241544  0.213593  0.215121          0.223128
-      raw_attention                 0.181958     0.235058                   NaN    0.200284  0.206577  0.182864          0.194196
+slice_value                      Compression  Explanation  Modulation  Omission  Synonymy  Syntactic Change
+model method                                                                                               
+e5    attnlrp                       0.276419     0.288633    0.277197  0.260215  0.267564          0.298049
+      gradient_shap                 0.203172     0.237529    0.213763  0.201274  0.208272          0.238623
+      integrated_gradients          0.205551     0.235641    0.213615  0.210097  0.205276          0.238726
+      raw_attention                 0.201738     0.240223    0.219716  0.184600  0.217537          0.206370
+mbert gradient_shap                 0.222668     0.245867    0.234484  0.230872  0.223191          0.252888
+      integrated_gradients          0.221138     0.249108    0.236731  0.245337  0.216325          0.254378
+      raw_attention                 0.233166     0.247385    0.238103  0.247642  0.222445          0.275081
+qwen  integrated_gradients_qwen     0.086437     0.034040         NaN  0.078362  0.076832          0.109799
+xlmr  attnlrp                       0.299790     0.328109    0.288925  0.308184  0.270566          0.300013
+      gradient_shap                 0.207007     0.256171    0.244661  0.223743  0.214316          0.228559
+      integrated_gradients          0.210879     0.257415    0.241544  0.213593  0.215121          0.223128
+      raw_attention                 0.181958     0.235058    0.200284  0.206577  0.182864          0.194196
