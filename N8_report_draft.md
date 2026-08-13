@@ -1,5 +1,5 @@
 # Interpreting Readability Evaluation with Explainable AI
-## N8CIR Summer Internship Report - DRAFT
+## N8CIR Summer Internship Report
 
 **Author:** Owais Mahmood
 
@@ -7,7 +7,7 @@
 
 **Institution:** University of Leeds
 
----
+---d
 
 ## 1. Aim and Context of the Project
 
@@ -185,46 +185,153 @@ Each was resolved on its own terms: reinstalling PyTorch with a build matching t
 
 ### 8.1 Overall Comparison
 
-The full comparison table covers all four models and every explainer method applicable to each, evaluated using Precision@K, Recall@K, F1, and AUPRC against the real human-edited spans from Task 1. The mean scores (Precision@K and AUPRC) were as follows.
+The full comparison table covers all four models and every explainer method applicable to each, evaluated on the complete final test set (281 pairs) using Precision@K, Recall@K, F1, and AUPRC against the real human-edited spans from Task 1. mBERT's legacy seventh label, Illocutionary Change, is excluded from this table, since it is not part of the current six-label taxonomy used by the other three models (its own results are reported separately in Section 9). The mean scores (Precision@K and AUPRC) were as follows.
 
 | Model | Method | Precision@K | AUPRC |
 |---|---|---|---|
-| mBERT | GradientSHAP | 0.236 | 0.266 |
-| mBERT | Integrated Gradients | 0.237 | 0.265 |
-| mBERT | Raw Attention | 0.241 | 0.263 |
+| mBERT | GradientSHAP | 0.232 | 0.262 |
+| mBERT | Integrated Gradients | 0.232 | 0.262 |
+| mBERT | Raw Attention | 0.239 | 0.262 |
 | XLM-R | AttnLRP | 0.291 | 0.331 |
 | XLM-R | GradientSHAP | 0.227 | 0.270 |
-| XLM-R | Integrated Gradients | 0.225 | 0.268 |
+| XLM-R | Integrated Gradients | 0.226 | 0.268 |
 | XLM-R | Raw Attention | 0.195 | 0.234 |
 | E5 | AttnLRP | 0.275 | 0.310 |
 | E5 | GradientSHAP | 0.214 | 0.250 |
 | E5 | Integrated Gradients | 0.214 | 0.250 |
 | E5 | Raw Attention | 0.215 | 0.268 |
-| Qwen | Integrated Gradients (adapted) | 0.083 | 0.100 |
+| Qwen | Integrated Gradients (adapted) | 0.095 | 0.108 |
 
-Two findings stand out clearly from this table.
+This comparison spans three distinct questions, which are kept deliberately separate rather than conflated into a single ranking.
 
-**AttnLRP consistently outperforms the other three methods.**
+**Method comparison: which explainer works best within the same model?**
 
-On both XLM-R and E5, AttnLRP achieved the highest Precision@K and AUPRC of any method tested, and by a meaningful margin, not a marginal difference. This pattern held across nearly every simplification strategy individually, not just in the overall average, which suggests it is a genuine, consistent property of the method rather than an artefact of any one subset of the data.
+On XLM-R, AttnLRP improves Precision@K by 0.064 and AUPRC by 0.061 over the next-best method (GradientSHAP). On E5, AttnLRP improves Precision@K by 0.061 and AUPRC by 0.042 over the next-best method (Raw Attention). These margins are large relative to the spread among the other three methods on the same model, and hold consistently across nearly every simplification strategy individually (Section 8.2), not just in the overall average. For mBERT, the three applicable methods (GradientSHAP, Integrated Gradients, Raw Attention) differ by only 0.007 in Precision@K and 0.0002 in AUPRC; the current results do not support a clear winner among these three methods on mBERT without uncertainty estimates.
+
+**Model comparison: which model produces the best edit-aligned explanations when evaluated using the same method?**
+
+This is where care is needed, since AttnLRP was only implemented for XLM-R and E5, not mBERT or Qwen (Section 6). Comparing overall averages naively would let AttnLRP's strength be misread as XLM-R's strength. Restricting the comparison to methods every relevant model actually shares gives a different, more reliable picture: under every method common to all three encoder models -- GradientSHAP, Integrated Gradients, and Raw Attention -- mBERT scores highest, not XLM-R. XLM-R's apparent overall advantage in the table above is attributable entirely to AttnLRP being paired with it. Under Integrated Gradients specifically, the three encoder models even rank differently depending on the metric: mBERT has the highest Precision@K (0.232), while XLM-R has the highest AUPRC (0.268), so the "best model" depends on which metric is prioritised. With AttnLRP, XLM-R scores higher than E5 by 0.016 Precision@K and 0.021 AUPRC, but this comparison is valid only between these two models under AttnLRP specifically, not as a general claim about XLM-R's overall strength.
+
+Correctly separated, this gives two independent findings rather than one conflated claim: AttnLRP is the strongest explainability method in this comparison, and mBERT is the strongest model once models are compared fairly, under a method they all share.
 
 **Qwen's explanations align considerably less well with human edits than the encoder models' explanations do.**
 
-Qwen's Precision@K (0.083) and AUPRC (0.100) are both roughly a third of the encoder models' lowest scores. The most likely explanation is architectural rather than a flaw in the explainer itself: Qwen's explanations are computed over its entire prompt, which includes a lengthy taxonomy card and instructions in addition to the sentence pair being judged, so the same total amount of "important tokens" identified by the method is spread across a much larger space, making it inherently harder to concentrate importance precisely on the sentence pair.
+Qwen's Precision@K (0.095) and AUPRC (0.108) are both well below every encoder model result, evaluated on the same complete 281-pair test set for a fair, matched comparison. The most likely explanation is architectural rather than a flaw in the explainer itself: Qwen's explanations are computed over its entire prompt, which includes a lengthy taxonomy card and instructions in addition to the sentence pair being judged, so the same total amount of "important tokens" identified by the method is spread across a much larger space, making it inherently harder to concentrate importance precisely on the sentence pair.
 
 ### 8.2 Per-Strategy Breakdown
 
-The same metrics were also computed separately for each of the six simplification strategies (Synonymy, Modulation, Compression, Explanation, Syntactic Change, Omission), plus, for mBERT specifically, the seventh legacy strategy Illocutionary Change. AttnLRP's advantage over the other methods was not concentrated in one or two strategies; it appeared consistently across nearly all of them for both XLM-R and E5, which strengthens the case that this is a genuine property of the method rather than a result specific to a particular kind of edit.
+The same metrics were computed separately for each of the six simplification strategies in the current taxonomy, together with the real number of test pairs carrying each gold label (n). mBERT's legacy seventh label, Illocutionary Change, is not part of the current taxonomy and is reported separately in Section 9, not included here.
+
+| Strategy | n | Best method within model | Best model (methods shared by all 3 encoders) | Margin |
+|---|---|---|---|---|
+| Synonymy | 215 | XLM-R/AttnLRP | mBERT (3/3 shared methods) | 0.001-0.009 |
+| Modulation | 150 | XLM-R/AttnLRP | XLM-R (2/3), mBERT (1/3) | 0.005-0.018 |
+| Compression | 87 | XLM-R/AttnLRP | mBERT (3/3 shared methods) | 0.010-0.032 |
+| Explanation | 79 | XLM-R/AttnLRP | XLM-R (2/3), mBERT (1/3) | 0.007-0.010 |
+| Syntactic Change | 80 | XLM-R/AttnLRP | mBERT (3/3 shared methods) | 0.014-0.069 |
+| Omission | 61 | XLM-R/AttnLRP | mBERT (3/3 shared methods) | 0.007-0.041 |
+
+AttnLRP is the strongest method within its model (XLM-R) on every single strategy without exception, consistent with the overall pattern in Section 8.1. The model-level picture is more nuanced: mBERT wins outright on four of the six strategies (Synonymy, Compression, Syntactic Change, Omission) across every method the three encoder models share, but XLM-R actually wins on two strategies -- Modulation and Explanation -- under two of the three shared methods (GradientSHAP and Integrated Gradients), with mBERT only regaining the lead under Raw Attention specifically on those two strategies. This is a genuinely mixed result, not a uniform advantage for either model, and is only visible because model and method comparisons were kept separate (Section 8.1).
+
+**Synonymy**
+
+(n=215, the most frequent strategy) shows the smallest margins of any strategy (as low as 0.001 under Integrated Gradients). Synonym substitution is typically a single-word, lexically local edit, which even weaker attribution methods can localise reasonably well, leaving little room for one method or model to show a large advantage over another.
+
+**Compression**
+
+(n=87) shows mBERT winning clearly and consistently (margins 0.010-0.032). Compression often involves merging or shortening a short phrasal span rather than a single token, which may still be reasonably compact and localisable, consistent with mBERT's advantage holding across all three shared methods here.
+
+**Modulation** (n=150) and **Explanation** (n=79)
+
+are the two strategies where XLM-R outperforms mBERT under two of the three shared methods. Both strategies can involve a broader shift across the sentence -- a change in perspective or register for Modulation, inserted explanatory content for Explanation -- rather than a single local substitution, which may favour XLM-R's larger pretrained representation for capturing longer-range dependencies. This remains a specific, method-dependent finding (Raw Attention still favours mBERT even on these two strategies) rather than a general claim that XLM-R is the stronger model.
+
+**Syntactic Change**
+
+(n=80) shows mBERT's largest margin of any strategy under Raw Attention specifically (0.069), notably larger than its margins under GradientSHAP or Integrated Gradients on the same strategy. Syntactic restructuring may correlate more directly with attention patterns than semantic edits do, since attention naturally reflects positional and grammatical relationships between tokens, which could explain why Raw Attention performs relatively well here compared to its generally weaker showing elsewhere (Section 9).
+
+**Omission**
+
+(n=61, the least frequent strategy and therefore the noisiest estimate) shows mBERT winning consistently, with its largest margin under Raw Attention (0.041). Omission is, in principle, a strategy with a distinctive signal for attribution methods: the edit is defined by a span's absence rather than its replacement. The smaller sample size here means this finding should be treated with more caution than the higher-n strategies above.
 
 ### 8.3 Visualisations
 
-Eight visualisation types were produced, all built directly from real evaluation data rather than illustrative examples:
+Eight visualisation types were produced, all built directly from real evaluation data rather than illustrative examples.
 
-1. **Token-level heatmaps** showing per-token importance as coloured text, for a single explanation
-2. **Side-by-side method comparisons**, stacking the same sentence's explanation across all three mBERT methods for direct visual comparison
-3. **Bar charts** comparing Precision@K across all methods and models
-4. **Radar charts** summarising multiple evaluation dimensions (overall Precision@K, overall AUPRC, and two per-strategy scores) on a single chart per method
-5. **Deletion and insertion curves**, tracking predicted probability as the most important tokens are progressively removed or revealed
-6. **Strategy-level heatmaps**, one per model, showing Precision@K for every method against every simplification strategy
-7. **Box plots** showing the distribution, not just the mean, of attribution scores for each method
-8. **Error-analysis examples**, automatically selecting the real highest- and lowest-scoring explanations from the full results to show a successful and an unsuccessful case side by side
+**1. Token-level heatmaps**, showing per-token importance as coloured text (red = positive, blue = negative), for a single explanation (Integrated Gradients, mBERT):
+
+![Token-level heatmap](Task2/explainability-pipeline/outputs/visualizations/token_heatmap_single_method.png)
+
+**2. Side-by-side method comparisons**, stacking the same sentence's explanation across all three mBERT methods for direct visual comparison:
+
+![Side-by-side method comparison](Task2/explainability-pipeline/outputs/visualizations/token_heatmap_side_by_side.png)
+
+**3. Bar charts** comparing Precision@K across all methods and models:
+
+![Bar chart of Precision@K by method and model](Task2/explainability-pipeline/outputs/visualizations/bar_chart_precision_by_method_model.png)
+
+**4. Radar charts** summarising multiple evaluation dimensions (overall Precision@K, overall AUPRC, and two per-strategy scores) on a single chart per method:
+
+![Radar chart of mBERT method comparison](Task2/explainability-pipeline/outputs/visualizations/radar_chart_mbert_methods.png)
+
+**5. Deletion and insertion curves**, tracking predicted probability as the most important tokens are progressively removed or revealed:
+
+![Deletion and insertion curves](Task2/explainability-pipeline/outputs/visualizations/deletion_insertion_curve.png)
+
+**6. Strategy-level heatmaps**, one per model, showing Precision@K for every method against every simplification strategy:
+
+![Strategy heatmap, mBERT](Task2/explainability-pipeline/outputs/visualizations/strategy_heatmap_mbert.png)
+
+![Strategy heatmap, XLM-R](Task2/explainability-pipeline/outputs/visualizations/strategy_heatmap_xlmr.png)
+
+![Strategy heatmap, E5](Task2/explainability-pipeline/outputs/visualizations/strategy_heatmap_e5.png)
+
+![Strategy heatmap, Qwen](Task2/explainability-pipeline/outputs/visualizations/strategy_heatmap_qwen.png)
+
+**7. Box plots** showing the distribution, not just the mean, of attribution scores for each method:
+
+![Box plot of attribution score distribution](Task2/explainability-pipeline/outputs/visualizations/boxplot_attribution_distribution.png)
+
+**8. Error-analysis examples**, automatically selecting the real highest- and lowest-scoring explanations from the full results to show a successful and an unsuccessful case side by side:
+
+![Error analysis: successful vs unsuccessful explanation](Task2/explainability-pipeline/outputs/visualizations/error_analysis_success_vs_failure.png)
+
+### 8.4 Processing Time and Compute Cost
+
+Wall-clock time and peak GPU memory were measured per explanation, using consistent instrumentation across methods (Section 4.4).
+
+| Method | Seconds per explanation | Peak GPU memory |
+|---|---|---|
+| Raw Attention (mBERT) | 0.017 | ~700 MB (consistent) |
+| Integrated Gradients (mBERT) | 2.73 | 2-8 GB (varies with sequence length) |
+| AttnLRP (XLM-R, E5) | Single backward pass per label; measured at full scale (281 pairs), completing in 185s (XLM-R) and 216s (E5) total, roughly 0.24-0.27s per explanation | Not separately profiled |
+| Integrated Gradients (Qwen, adapted) | ~10s per explanation at full scale (281 pairs, 775 explanations in 2875s total) | Substantially higher, given the 7B parameter model |
+
+Raw Attention is roughly 160 times faster than Integrated Gradients on the same model (mBERT), since it requires only a single forward pass with no gradient computation, whereas Integrated Gradients requires 50 forward-and-backward passes per explanation (one per interpolation step). AttnLRP is a notable middle ground: despite being a gradient-based method that requires backpropagation, it needs only a single backward pass per label, making it considerably cheaper than Integrated Gradients or GradientSHAP while still outperforming them on plausibility (Section 8.1). This is a genuinely useful practical property, not just an accuracy advantage: AttnLRP delivers the best results in this comparison at a fraction of the compute cost of the next most accurate gradient-based methods.
+
+Qwen's Integrated Gradients adaptation is by far the most expensive method in this comparison, reflecting both its 7-billion-parameter size and the substantially longer input (its full prompt, including the taxonomy card, versus a single sentence pair for the encoder models).sss
+
+## 9. Discussion of Findings and Limitations
+
+The results in this report offer a genuine, if partial, answer to the project's original research questions. AttnLRP's consistent advantage over Integrated Gradients, GradientSHAP, and Raw Attention, across two architecturally similar but independently trained models, is the clearest finding: it suggests that correctly handling the non-linear operations inside self-attention, which is exactly what distinguishes AttnLRP from the other gradient-based methods, produces explanations that genuinely align better with where human editors actually made changes. This is a meaningful result in its own right, separate from any particular model's classification accuracy.
+
+A second, more specific finding emerged during the XLM-R comparison: Raw Attention performed noticeably worse than the gradient-based methods on that model, and further investigation showed that Raw Attention's scores were identical regardless of which strategy label was being explained. This makes sense on reflection: attention weights are a property of the model's forward pass alone and carry no information about which output label is being predicted, whereas gradient-based methods differentiate specifically with respect to one target label's logit. This is a genuine methodological difference between the two families of method, not a flaw in either, but it does mean Raw Attention's results should be read with that limitation in mind.
+
+Several real limitations should be acknowledged directly.
+
+**Not every metric was evaluated at full scale.**
+
+Precision@K, Recall@K, F1, and AUPRC were computed across the complete test set for every applicable model and method. Deletion/insertion curves, attribution stability, and processing time, by contrast, were implemented, verified against controlled synthetic tests, and confirmed working correctly on real data, but only tested on a small number of real examples rather than the full dataset, given the time available this week. The mechanisms themselves are sound; extending them to full scale would be a natural next step.
+
+**A small number of test pairs have no evaluable label under the current taxonomy.**
+
+When the label set changed from seven strategies to six, twelve pairs whose only gold label was either "Transposition" or "Illocutionary Change" were left without any label under the new scheme. This was raised directly and resolved by Nouran providing an updated, cleaned test set; the current results are computed against that corrected data.
+
+**AttnLRP's conservation property is not perfectly satisfied.**
+
+LRP methods have a theoretical property that the sum of all token relevance scores should approximately equal the model's actual output value being explained. In testing against the real trained models, this ratio came out at roughly 2.6 rather than the ideal 1.0. This is a substantial improvement over the completely broken result found before the methodology bug was fixed, and the explanations produced are clearly meaningful and outperform the other methods, but the residual gap from 1.0 suggests there may be a smaller, unresolved gap in the implementation's coverage, specific to this model's custom classification head wrapper, that would be worth investigating further.
+
+**Qwen has only one explainer method implemented, not the full set.**
+
+Given the substantial redesign required to adapt any explainability method to Qwen's prompted architecture at all, only an adapted version of Integrated Gradients was implemented within the time available. GradientSHAP, Raw Attention, and AttnLRP would each need their own architecture-specific adaptation to be applied to Qwen fairly.
+
+Taken together, the project demonstrates that explainability methods can meaningfully be compared across genuinely different model architectures, that the choice of method matters (AttnLRP's advantage being the clearest evidence of this), and that doing this kind of comparison properly surfaces real, non-obvious findings, rather than confirming an assumption made in advance.
