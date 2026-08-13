@@ -36,7 +36,7 @@ def main():
         "plausibility_encoders": metrics_dir / "plausibility_encoders_full_results.csv",
         "attnlrp_xlmr": metrics_dir / "attnlrp_xlmr_plausibility_results.csv",
         "attnlrp_e5": metrics_dir / "attnlrp_e5_plausibility_results.csv",
-        "qwen": metrics_dir / "qwen_plausibility_results.csv",
+        "qwen": metrics_dir / "qwen_plausibility_full_results.csv",
     }
 
     frames = []

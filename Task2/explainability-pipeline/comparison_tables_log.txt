@@ -2,10 +2,10 @@ Loaded 8652 rows from outputs/metrics/plausibility_full_results.csv
 Loaded 17484 rows from outputs/metrics/plausibility_encoders_full_results.csv
 Loaded 3000 rows from outputs/metrics/attnlrp_xlmr_plausibility_results.csv
 Loaded 3104 rows from outputs/metrics/attnlrp_e5_plausibility_results.csv
-Loaded 264 rows from outputs/metrics/qwen_plausibility_results.csv
+Loaded 3060 rows from outputs/metrics/qwen_plausibility_full_results.csv
 Separated 780 legacy 'Illocutionary Change' rows (mBERT 7-label taxonomy only, not comparable to the current 6-label taxonomy) -- saved separately to outputs/tables/legacy_illocutionary_change_mbert_only.csv
 
-Total combined metric records (primary, 6-label taxonomy only): 31724
+Total combined metric records (primary, 6-label taxonomy only): 34520
 
 Saved overall comparison table to outputs/tables/comparison_overall.csv
 
@@ -19,7 +19,7 @@ e5    attnlrp                    0.309927  0.275371        0.275371     0.275371
 mbert gradient_shap              0.262146  0.232091        0.232091     0.232091
       integrated_gradients       0.261580  0.231999        0.231999     0.231999
       raw_attention              0.261987  0.238724        0.238724     0.238724
-qwen  integrated_gradients_qwen  0.099989  0.082634        0.082634     0.082634
+qwen  integrated_gradients_qwen  0.107686  0.094502        0.094502     0.094502
 xlmr  attnlrp                    0.331245  0.291175        0.291175     0.291175
       gradient_shap              0.269939  0.227116        0.227116     0.227116
       integrated_gradients       0.268021  0.225466        0.225466     0.225466
@@ -37,7 +37,7 @@ e5    attnlrp                       0.276419     0.288633    0.277197  0.260215 
 mbert gradient_shap                 0.222668     0.245867    0.234484  0.230872  0.223191          0.252888
       integrated_gradients          0.221138     0.249108    0.236731  0.245337  0.216325          0.254378
       raw_attention                 0.233166     0.247385    0.238103  0.247642  0.222445          0.275081
-qwen  integrated_gradients_qwen     0.086437     0.034040         NaN  0.078362  0.076832          0.109799
+qwen  integrated_gradients_qwen     0.090218     0.123161    0.095328  0.081296  0.100455          0.081766
 xlmr  attnlrp                       0.299790     0.328109    0.288925  0.308184  0.270566          0.300013
       gradient_shap                 0.207007     0.256171    0.244661  0.223743  0.214316          0.228559
       integrated_gradients          0.210879     0.257415    0.241544  0.213593  0.215121          0.223128

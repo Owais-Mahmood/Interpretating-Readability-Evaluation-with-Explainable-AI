@@ -167,26 +167,30 @@ mbert,raw_attention,Syntactic Change,auprc,0.28590884872912153,0.089543392385270
 mbert,raw_attention,Syntactic Change,f1_at_k,0.27508103893872987,0.10859932871766377,75
 mbert,raw_attention,Syntactic Change,precision_at_k,0.27508103893872987,0.10859932871766376,75
 mbert,raw_attention,Syntactic Change,recall_at_k,0.27508103893872987,0.10859932871766376,75
-qwen,integrated_gradients_qwen,Compression,auprc,0.12002492216048069,0.046705162778892605,17
-qwen,integrated_gradients_qwen,Compression,f1_at_k,0.08643730692905627,0.07611038071169672,17
-qwen,integrated_gradients_qwen,Compression,precision_at_k,0.08643730692905627,0.07611038071169672,17
-qwen,integrated_gradients_qwen,Compression,recall_at_k,0.08643730692905627,0.07611038071169672,17
-qwen,integrated_gradients_qwen,Explanation,auprc,0.0790995645026576,0.0067215393999841295,3
-qwen,integrated_gradients_qwen,Explanation,f1_at_k,0.03404022877707084,0.00502757354034485,3
-qwen,integrated_gradients_qwen,Explanation,precision_at_k,0.03404022877707084,0.00502757354034485,3
-qwen,integrated_gradients_qwen,Explanation,recall_at_k,0.03404022877707084,0.00502757354034485,3
-qwen,integrated_gradients_qwen,Omission,auprc,0.08108002139182506,0.027609316617545326,12
-qwen,integrated_gradients_qwen,Omission,f1_at_k,0.07836164439425307,0.06929937451761305,12
-qwen,integrated_gradients_qwen,Omission,precision_at_k,0.07836164439425307,0.06929937451761305,12
-qwen,integrated_gradients_qwen,Omission,recall_at_k,0.07836164439425307,0.06929937451761305,12
-qwen,integrated_gradients_qwen,Synonymy,auprc,0.09523309530356322,0.04858705600222994,24
-qwen,integrated_gradients_qwen,Synonymy,f1_at_k,0.07683157988646448,0.07813701302902622,24
-qwen,integrated_gradients_qwen,Synonymy,precision_at_k,0.07683157988646448,0.07813701302902622,24
-qwen,integrated_gradients_qwen,Synonymy,recall_at_k,0.07683157988646448,0.07813701302902622,24
-qwen,integrated_gradients_qwen,Syntactic Change,auprc,0.1062975240646715,0.05467161067316079,10
-qwen,integrated_gradients_qwen,Syntactic Change,f1_at_k,0.10979946548210728,0.10260415225322292,10
-qwen,integrated_gradients_qwen,Syntactic Change,precision_at_k,0.10979946548210728,0.10260415225322292,10
-qwen,integrated_gradients_qwen,Syntactic Change,recall_at_k,0.10979946548210728,0.10260415225322292,10
+qwen,integrated_gradients_qwen,Compression,auprc,0.12243236937568552,0.0539237086823565,118
+qwen,integrated_gradients_qwen,Compression,f1_at_k,0.0902176045289864,0.07361151521773479,118
+qwen,integrated_gradients_qwen,Compression,precision_at_k,0.0902176045289864,0.07361151521773479,118
+qwen,integrated_gradients_qwen,Compression,recall_at_k,0.0902176045289864,0.07361151521773479,118
+qwen,integrated_gradients_qwen,Explanation,auprc,0.125148692800247,0.06532552461870708,58
+qwen,integrated_gradients_qwen,Explanation,f1_at_k,0.12316141441265548,0.09022112076858736,58
+qwen,integrated_gradients_qwen,Explanation,precision_at_k,0.12316141441265548,0.09022112076858736,58
+qwen,integrated_gradients_qwen,Explanation,recall_at_k,0.12316141441265548,0.09022112076858736,58
+qwen,integrated_gradients_qwen,Modulation,auprc,0.10583992288208666,0.045062206434848366,140
+qwen,integrated_gradients_qwen,Modulation,f1_at_k,0.09532818148390572,0.07567560776829338,140
+qwen,integrated_gradients_qwen,Modulation,precision_at_k,0.09532818148390572,0.07567560776829338,140
+qwen,integrated_gradients_qwen,Modulation,recall_at_k,0.09532818148390572,0.07567560776829338,140
+qwen,integrated_gradients_qwen,Omission,auprc,0.09334138602379886,0.0365722251744272,44
+qwen,integrated_gradients_qwen,Omission,f1_at_k,0.08129625768865743,0.063238439969218,44
+qwen,integrated_gradients_qwen,Omission,precision_at_k,0.08129625768865743,0.063238439969218,44
+qwen,integrated_gradients_qwen,Omission,recall_at_k,0.08129625768865743,0.063238439969218,44
+qwen,integrated_gradients_qwen,Synonymy,auprc,0.10159034858907634,0.06585014955680642,239
+qwen,integrated_gradients_qwen,Synonymy,f1_at_k,0.10045459384350022,0.08432563147709117,239
+qwen,integrated_gradients_qwen,Synonymy,precision_at_k,0.10045459384350022,0.08432563147709117,239
+qwen,integrated_gradients_qwen,Synonymy,recall_at_k,0.10045459384350022,0.08432563147709117,239
+qwen,integrated_gradients_qwen,Syntactic Change,auprc,0.10523904198318527,0.043209036348414914,166
+qwen,integrated_gradients_qwen,Syntactic Change,f1_at_k,0.08176550525336666,0.06523885176102732,166
+qwen,integrated_gradients_qwen,Syntactic Change,precision_at_k,0.08176550525336666,0.06523885176102732,166
+qwen,integrated_gradients_qwen,Syntactic Change,recall_at_k,0.08176550525336666,0.06523885176102732,166
 xlmr,attnlrp,Compression,auprc,0.3207435602070807,0.12555785235502695,90
 xlmr,attnlrp,Compression,f1_at_k,0.299789732111542,0.14130796772623988,90
 xlmr,attnlrp,Compression,precision_at_k,0.299789732111542,0.14130796772623988,90
