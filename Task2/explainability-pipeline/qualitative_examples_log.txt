@@ -1,0 +1,20 @@
+Loaded 281 examples.
+Loading XLM-R...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/393 [00:00<?, ?it/s]Loading weights:  67%|██████▋   | 265/393 [00:00<00:00, 2649.23it/s]Loading weights: 100%|██████████| 393/393 [00:00<00:00, 2613.66it/s]
+Loaded.
+[transformers] `use_return_dict` is deprecated! Use `return_dict` instead!
+Synonymy / SUCCESSFUL: 89d8d14da319ced8, confidence=0.618
+Synonymy / UNSUCCESSFUL: 7efaf284b208daee, confidence=0.477
+Modulation / SUCCESSFUL: 0b13ef510cf62672, confidence=0.471
+Modulation / UNSUCCESSFUL: 6b2fbda34a617d93, confidence=0.470
+Compression / SUCCESSFUL: 1a408162a7e9e7a1, confidence=0.700
+Compression / UNSUCCESSFUL: c8de7f52dd678b4d, confidence=0.605
+Explanation / SUCCESSFUL: 41711f05e2154f19, confidence=0.515
+Explanation / UNSUCCESSFUL: b5b875edf1cbdd7a, confidence=0.538
+Syntactic Change / SUCCESSFUL: 50536e22a817d894, confidence=0.479
+Syntactic Change / UNSUCCESSFUL: 0a08fcb71a7ad371, confidence=0.499
+Omission / SUCCESSFUL: 4263c780d7547c5d, confidence=0.496
+Omission / UNSUCCESSFUL: 65c2a16c4f8b71dc, confidence=0.653
+
+Saved 12 rows to outputs/tables/qualitative_examples.csv
