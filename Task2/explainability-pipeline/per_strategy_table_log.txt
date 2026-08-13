@@ -1,0 +1,86 @@
+Loaded 281 examples from the final test set.
+
+Ground-truth sample counts (n) per strategy:
+  Synonymy: 215
+  Modulation: 150
+  Compression: 87
+  Explanation: 79
+  Syntactic Change: 80
+  Omission: 61
+
+Saved full per-strategy table to outputs/tables/per_strategy_full_table.csv
+Saved wide (report-ready) table to outputs/tables/per_strategy_wide_table.csv
+
+        strategy   n model                    method  precision_at_k  recall_at_k  f1_at_k  auprc
+     Compression  87    e5                   attnlrp          0.2764       0.2764   0.2764 0.3010
+     Compression  87    e5             gradient_shap          0.2032       0.2032   0.2032 0.2416
+     Compression  87    e5      integrated_gradients          0.2056       0.2056   0.2056 0.2424
+     Compression  87    e5             raw_attention          0.2017       0.2017   0.2017 0.2592
+     Compression  87 mbert             gradient_shap          0.2227       0.2227   0.2227 0.2545
+     Compression  87 mbert      integrated_gradients          0.2211       0.2211   0.2211 0.2506
+     Compression  87 mbert             raw_attention          0.2332       0.2332   0.2332 0.2586
+     Compression  87  qwen integrated_gradients_qwen          0.0902       0.0902   0.0902 0.1224
+     Compression  87  xlmr                   attnlrp          0.2998       0.2998   0.2998 0.3207
+     Compression  87  xlmr             gradient_shap          0.2070       0.2070   0.2070 0.2484
+     Compression  87  xlmr      integrated_gradients          0.2109       0.2109   0.2109 0.2503
+     Compression  87  xlmr             raw_attention          0.1820       0.1820   0.1820 0.2180
+     Explanation  79    e5                   attnlrp          0.2886       0.2886   0.2886 0.3252
+     Explanation  79    e5             gradient_shap          0.2375       0.2375   0.2375 0.2741
+     Explanation  79    e5      integrated_gradients          0.2356       0.2356   0.2356 0.2724
+     Explanation  79    e5             raw_attention          0.2402       0.2402   0.2402 0.2896
+     Explanation  79 mbert             gradient_shap          0.2459       0.2459   0.2459 0.2814
+     Explanation  79 mbert      integrated_gradients          0.2491       0.2491   0.2491 0.2854
+     Explanation  79 mbert             raw_attention          0.2474       0.2474   0.2474 0.2767
+     Explanation  79  qwen integrated_gradients_qwen          0.1232       0.1232   0.1232 0.1251
+     Explanation  79  xlmr                   attnlrp          0.3281       0.3281   0.3281 0.3768
+     Explanation  79  xlmr             gradient_shap          0.2562       0.2562   0.2562 0.3061
+     Explanation  79  xlmr      integrated_gradients          0.2574       0.2574   0.2574 0.2940
+     Explanation  79  xlmr             raw_attention          0.2351       0.2351   0.2351 0.2745
+      Modulation 150    e5                   attnlrp          0.2772       0.2772   0.2772 0.3112
+      Modulation 150    e5             gradient_shap          0.2138       0.2138   0.2138 0.2505
+      Modulation 150    e5      integrated_gradients          0.2136       0.2136   0.2136 0.2527
+      Modulation 150    e5             raw_attention          0.2197       0.2197   0.2197 0.2696
+      Modulation 150 mbert             gradient_shap          0.2345       0.2345   0.2345 0.2662
+      Modulation 150 mbert      integrated_gradients          0.2367       0.2367   0.2367 0.2653
+      Modulation 150 mbert             raw_attention          0.2381       0.2381   0.2381 0.2639
+      Modulation 150  qwen integrated_gradients_qwen          0.0953       0.0953   0.0953 0.1058
+      Modulation 150  xlmr                   attnlrp          0.2889       0.2889   0.2889 0.3361
+      Modulation 150  xlmr             gradient_shap          0.2447       0.2447   0.2447 0.2858
+      Modulation 150  xlmr      integrated_gradients          0.2415       0.2415   0.2415 0.2825
+      Modulation 150  xlmr             raw_attention          0.2003       0.2003   0.2003 0.2369
+        Omission  61    e5                   attnlrp          0.2602       0.2602   0.2602 0.2917
+        Omission  61    e5             gradient_shap          0.2013       0.2013   0.2013 0.2328
+        Omission  61    e5      integrated_gradients          0.2101       0.2101   0.2101 0.2356
+        Omission  61    e5             raw_attention          0.1846       0.1846   0.1846 0.2494
+        Omission  61 mbert             gradient_shap          0.2309       0.2309   0.2309 0.2571
+        Omission  61 mbert      integrated_gradients          0.2453       0.2453   0.2453 0.2581
+        Omission  61 mbert             raw_attention          0.2476       0.2476   0.2476 0.2604
+        Omission  61  qwen integrated_gradients_qwen          0.0813       0.0813   0.0813 0.0933
+        Omission  61  xlmr                   attnlrp          0.3082       0.3082   0.3082 0.3453
+        Omission  61  xlmr             gradient_shap          0.2237       0.2237   0.2237 0.2649
+        Omission  61  xlmr      integrated_gradients          0.2136       0.2136   0.2136 0.2618
+        Omission  61  xlmr             raw_attention          0.2066       0.2066   0.2066 0.2332
+        Synonymy 215    e5                   attnlrp          0.2676       0.2676   0.2676 0.3084
+        Synonymy 215    e5             gradient_shap          0.2083       0.2083   0.2083 0.2465
+        Synonymy 215    e5      integrated_gradients          0.2053       0.2053   0.2053 0.2438
+        Synonymy 215    e5             raw_attention          0.2175       0.2175   0.2175 0.2686
+        Synonymy 215 mbert             gradient_shap          0.2232       0.2232   0.2232 0.2534
+        Synonymy 215 mbert      integrated_gradients          0.2163       0.2163   0.2163 0.2516
+        Synonymy 215 mbert             raw_attention          0.2224       0.2224   0.2224 0.2479
+        Synonymy 215  qwen integrated_gradients_qwen          0.1005       0.1005   0.1005 0.1016
+        Synonymy 215  xlmr                   attnlrp          0.2706       0.2706   0.2706 0.3170
+        Synonymy 215  xlmr             gradient_shap          0.2143       0.2143   0.2143 0.2597
+        Synonymy 215  xlmr      integrated_gradients          0.2151       0.2151   0.2151 0.2597
+        Synonymy 215  xlmr             raw_attention          0.1829       0.1829   0.1829 0.2250
+Syntactic Change  80    e5                   attnlrp          0.2980       0.2980   0.2980 0.3264
+Syntactic Change  80    e5             gradient_shap          0.2386       0.2386   0.2386 0.2637
+Syntactic Change  80    e5      integrated_gradients          0.2387       0.2387   0.2387 0.2585
+Syntactic Change  80    e5             raw_attention          0.2064       0.2064   0.2064 0.2664
+Syntactic Change  80 mbert             gradient_shap          0.2529       0.2529   0.2529 0.2737
+Syntactic Change  80 mbert      integrated_gradients          0.2544       0.2544   0.2544 0.2767
+Syntactic Change  80 mbert             raw_attention          0.2751       0.2751   0.2751 0.2859
+Syntactic Change  80  qwen integrated_gradients_qwen          0.0818       0.0818   0.0818 0.1052
+Syntactic Change  80  xlmr                   attnlrp          0.3000       0.3000   0.3000 0.3311
+Syntactic Change  80  xlmr             gradient_shap          0.2286       0.2286   0.2286 0.2671
+Syntactic Change  80  xlmr      integrated_gradients          0.2231       0.2231   0.2231 0.2665
+Syntactic Change  80  xlmr             raw_attention          0.1942       0.1942   0.1942 0.2345

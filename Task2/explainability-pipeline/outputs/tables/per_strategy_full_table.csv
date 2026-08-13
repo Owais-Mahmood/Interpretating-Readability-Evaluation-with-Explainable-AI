@@ -1,0 +1,289 @@
+strategy,n,model,method,metric,mean
+Compression,87,e5,attnlrp,auprc,0.301
+Compression,87,e5,attnlrp,f1_at_k,0.2764
+Compression,87,e5,attnlrp,precision_at_k,0.2764
+Compression,87,e5,attnlrp,recall_at_k,0.2764
+Explanation,79,e5,attnlrp,auprc,0.3252
+Explanation,79,e5,attnlrp,f1_at_k,0.2886
+Explanation,79,e5,attnlrp,precision_at_k,0.2886
+Explanation,79,e5,attnlrp,recall_at_k,0.2886
+Modulation,150,e5,attnlrp,auprc,0.3112
+Modulation,150,e5,attnlrp,f1_at_k,0.2772
+Modulation,150,e5,attnlrp,precision_at_k,0.2772
+Modulation,150,e5,attnlrp,recall_at_k,0.2772
+Omission,61,e5,attnlrp,auprc,0.2917
+Omission,61,e5,attnlrp,f1_at_k,0.2602
+Omission,61,e5,attnlrp,precision_at_k,0.2602
+Omission,61,e5,attnlrp,recall_at_k,0.2602
+Synonymy,215,e5,attnlrp,auprc,0.3084
+Synonymy,215,e5,attnlrp,f1_at_k,0.2676
+Synonymy,215,e5,attnlrp,precision_at_k,0.2676
+Synonymy,215,e5,attnlrp,recall_at_k,0.2676
+Syntactic Change,80,e5,attnlrp,auprc,0.3264
+Syntactic Change,80,e5,attnlrp,f1_at_k,0.298
+Syntactic Change,80,e5,attnlrp,precision_at_k,0.298
+Syntactic Change,80,e5,attnlrp,recall_at_k,0.298
+Compression,87,e5,gradient_shap,auprc,0.2416
+Compression,87,e5,gradient_shap,f1_at_k,0.2032
+Compression,87,e5,gradient_shap,precision_at_k,0.2032
+Compression,87,e5,gradient_shap,recall_at_k,0.2032
+Explanation,79,e5,gradient_shap,auprc,0.2741
+Explanation,79,e5,gradient_shap,f1_at_k,0.2375
+Explanation,79,e5,gradient_shap,precision_at_k,0.2375
+Explanation,79,e5,gradient_shap,recall_at_k,0.2375
+Modulation,150,e5,gradient_shap,auprc,0.2505
+Modulation,150,e5,gradient_shap,f1_at_k,0.2138
+Modulation,150,e5,gradient_shap,precision_at_k,0.2138
+Modulation,150,e5,gradient_shap,recall_at_k,0.2138
+Omission,61,e5,gradient_shap,auprc,0.2328
+Omission,61,e5,gradient_shap,f1_at_k,0.2013
+Omission,61,e5,gradient_shap,precision_at_k,0.2013
+Omission,61,e5,gradient_shap,recall_at_k,0.2013
+Synonymy,215,e5,gradient_shap,auprc,0.2465
+Synonymy,215,e5,gradient_shap,f1_at_k,0.2083
+Synonymy,215,e5,gradient_shap,precision_at_k,0.2083
+Synonymy,215,e5,gradient_shap,recall_at_k,0.2083
+Syntactic Change,80,e5,gradient_shap,auprc,0.2637
+Syntactic Change,80,e5,gradient_shap,f1_at_k,0.2386
+Syntactic Change,80,e5,gradient_shap,precision_at_k,0.2386
+Syntactic Change,80,e5,gradient_shap,recall_at_k,0.2386
+Compression,87,e5,integrated_gradients,auprc,0.2424
+Compression,87,e5,integrated_gradients,f1_at_k,0.2056
+Compression,87,e5,integrated_gradients,precision_at_k,0.2056
+Compression,87,e5,integrated_gradients,recall_at_k,0.2056
+Explanation,79,e5,integrated_gradients,auprc,0.2724
+Explanation,79,e5,integrated_gradients,f1_at_k,0.2356
+Explanation,79,e5,integrated_gradients,precision_at_k,0.2356
+Explanation,79,e5,integrated_gradients,recall_at_k,0.2356
+Modulation,150,e5,integrated_gradients,auprc,0.2527
+Modulation,150,e5,integrated_gradients,f1_at_k,0.2136
+Modulation,150,e5,integrated_gradients,precision_at_k,0.2136
+Modulation,150,e5,integrated_gradients,recall_at_k,0.2136
+Omission,61,e5,integrated_gradients,auprc,0.2356
+Omission,61,e5,integrated_gradients,f1_at_k,0.2101
+Omission,61,e5,integrated_gradients,precision_at_k,0.2101
+Omission,61,e5,integrated_gradients,recall_at_k,0.2101
+Synonymy,215,e5,integrated_gradients,auprc,0.2438
+Synonymy,215,e5,integrated_gradients,f1_at_k,0.2053
+Synonymy,215,e5,integrated_gradients,precision_at_k,0.2053
+Synonymy,215,e5,integrated_gradients,recall_at_k,0.2053
+Syntactic Change,80,e5,integrated_gradients,auprc,0.2585
+Syntactic Change,80,e5,integrated_gradients,f1_at_k,0.2387
+Syntactic Change,80,e5,integrated_gradients,precision_at_k,0.2387
+Syntactic Change,80,e5,integrated_gradients,recall_at_k,0.2387
+Compression,87,e5,raw_attention,auprc,0.2592
+Compression,87,e5,raw_attention,f1_at_k,0.2017
+Compression,87,e5,raw_attention,precision_at_k,0.2017
+Compression,87,e5,raw_attention,recall_at_k,0.2017
+Explanation,79,e5,raw_attention,auprc,0.2896
+Explanation,79,e5,raw_attention,f1_at_k,0.2402
+Explanation,79,e5,raw_attention,precision_at_k,0.2402
+Explanation,79,e5,raw_attention,recall_at_k,0.2402
+Modulation,150,e5,raw_attention,auprc,0.2696
+Modulation,150,e5,raw_attention,f1_at_k,0.2197
+Modulation,150,e5,raw_attention,precision_at_k,0.2197
+Modulation,150,e5,raw_attention,recall_at_k,0.2197
+Omission,61,e5,raw_attention,auprc,0.2494
+Omission,61,e5,raw_attention,f1_at_k,0.1846
+Omission,61,e5,raw_attention,precision_at_k,0.1846
+Omission,61,e5,raw_attention,recall_at_k,0.1846
+Synonymy,215,e5,raw_attention,auprc,0.2686
+Synonymy,215,e5,raw_attention,f1_at_k,0.2175
+Synonymy,215,e5,raw_attention,precision_at_k,0.2175
+Synonymy,215,e5,raw_attention,recall_at_k,0.2175
+Syntactic Change,80,e5,raw_attention,auprc,0.2664
+Syntactic Change,80,e5,raw_attention,f1_at_k,0.2064
+Syntactic Change,80,e5,raw_attention,precision_at_k,0.2064
+Syntactic Change,80,e5,raw_attention,recall_at_k,0.2064
+Compression,87,mbert,gradient_shap,auprc,0.2545
+Compression,87,mbert,gradient_shap,f1_at_k,0.2227
+Compression,87,mbert,gradient_shap,precision_at_k,0.2227
+Compression,87,mbert,gradient_shap,recall_at_k,0.2227
+Explanation,79,mbert,gradient_shap,auprc,0.2814
+Explanation,79,mbert,gradient_shap,f1_at_k,0.2459
+Explanation,79,mbert,gradient_shap,precision_at_k,0.2459
+Explanation,79,mbert,gradient_shap,recall_at_k,0.2459
+Modulation,150,mbert,gradient_shap,auprc,0.2662
+Modulation,150,mbert,gradient_shap,f1_at_k,0.2345
+Modulation,150,mbert,gradient_shap,precision_at_k,0.2345
+Modulation,150,mbert,gradient_shap,recall_at_k,0.2345
+Omission,61,mbert,gradient_shap,auprc,0.2571
+Omission,61,mbert,gradient_shap,f1_at_k,0.2309
+Omission,61,mbert,gradient_shap,precision_at_k,0.2309
+Omission,61,mbert,gradient_shap,recall_at_k,0.2309
+Synonymy,215,mbert,gradient_shap,auprc,0.2534
+Synonymy,215,mbert,gradient_shap,f1_at_k,0.2232
+Synonymy,215,mbert,gradient_shap,precision_at_k,0.2232
+Synonymy,215,mbert,gradient_shap,recall_at_k,0.2232
+Syntactic Change,80,mbert,gradient_shap,auprc,0.2737
+Syntactic Change,80,mbert,gradient_shap,f1_at_k,0.2529
+Syntactic Change,80,mbert,gradient_shap,precision_at_k,0.2529
+Syntactic Change,80,mbert,gradient_shap,recall_at_k,0.2529
+Compression,87,mbert,integrated_gradients,auprc,0.2506
+Compression,87,mbert,integrated_gradients,f1_at_k,0.2211
+Compression,87,mbert,integrated_gradients,precision_at_k,0.2211
+Compression,87,mbert,integrated_gradients,recall_at_k,0.2211
+Explanation,79,mbert,integrated_gradients,auprc,0.2854
+Explanation,79,mbert,integrated_gradients,f1_at_k,0.2491
+Explanation,79,mbert,integrated_gradients,precision_at_k,0.2491
+Explanation,79,mbert,integrated_gradients,recall_at_k,0.2491
+Modulation,150,mbert,integrated_gradients,auprc,0.2653
+Modulation,150,mbert,integrated_gradients,f1_at_k,0.2367
+Modulation,150,mbert,integrated_gradients,precision_at_k,0.2367
+Modulation,150,mbert,integrated_gradients,recall_at_k,0.2367
+Omission,61,mbert,integrated_gradients,auprc,0.2581
+Omission,61,mbert,integrated_gradients,f1_at_k,0.2453
+Omission,61,mbert,integrated_gradients,precision_at_k,0.2453
+Omission,61,mbert,integrated_gradients,recall_at_k,0.2453
+Synonymy,215,mbert,integrated_gradients,auprc,0.2516
+Synonymy,215,mbert,integrated_gradients,f1_at_k,0.2163
+Synonymy,215,mbert,integrated_gradients,precision_at_k,0.2163
+Synonymy,215,mbert,integrated_gradients,recall_at_k,0.2163
+Syntactic Change,80,mbert,integrated_gradients,auprc,0.2767
+Syntactic Change,80,mbert,integrated_gradients,f1_at_k,0.2544
+Syntactic Change,80,mbert,integrated_gradients,precision_at_k,0.2544
+Syntactic Change,80,mbert,integrated_gradients,recall_at_k,0.2544
+Compression,87,mbert,raw_attention,auprc,0.2586
+Compression,87,mbert,raw_attention,f1_at_k,0.2332
+Compression,87,mbert,raw_attention,precision_at_k,0.2332
+Compression,87,mbert,raw_attention,recall_at_k,0.2332
+Explanation,79,mbert,raw_attention,auprc,0.2767
+Explanation,79,mbert,raw_attention,f1_at_k,0.2474
+Explanation,79,mbert,raw_attention,precision_at_k,0.2474
+Explanation,79,mbert,raw_attention,recall_at_k,0.2474
+Modulation,150,mbert,raw_attention,auprc,0.2639
+Modulation,150,mbert,raw_attention,f1_at_k,0.2381
+Modulation,150,mbert,raw_attention,precision_at_k,0.2381
+Modulation,150,mbert,raw_attention,recall_at_k,0.2381
+Omission,61,mbert,raw_attention,auprc,0.2604
+Omission,61,mbert,raw_attention,f1_at_k,0.2476
+Omission,61,mbert,raw_attention,precision_at_k,0.2476
+Omission,61,mbert,raw_attention,recall_at_k,0.2476
+Synonymy,215,mbert,raw_attention,auprc,0.2479
+Synonymy,215,mbert,raw_attention,f1_at_k,0.2224
+Synonymy,215,mbert,raw_attention,precision_at_k,0.2224
+Synonymy,215,mbert,raw_attention,recall_at_k,0.2224
+Syntactic Change,80,mbert,raw_attention,auprc,0.2859
+Syntactic Change,80,mbert,raw_attention,f1_at_k,0.2751
+Syntactic Change,80,mbert,raw_attention,precision_at_k,0.2751
+Syntactic Change,80,mbert,raw_attention,recall_at_k,0.2751
+Compression,87,qwen,integrated_gradients_qwen,auprc,0.1224
+Compression,87,qwen,integrated_gradients_qwen,f1_at_k,0.0902
+Compression,87,qwen,integrated_gradients_qwen,precision_at_k,0.0902
+Compression,87,qwen,integrated_gradients_qwen,recall_at_k,0.0902
+Explanation,79,qwen,integrated_gradients_qwen,auprc,0.1251
+Explanation,79,qwen,integrated_gradients_qwen,f1_at_k,0.1232
+Explanation,79,qwen,integrated_gradients_qwen,precision_at_k,0.1232
+Explanation,79,qwen,integrated_gradients_qwen,recall_at_k,0.1232
+Modulation,150,qwen,integrated_gradients_qwen,auprc,0.1058
+Modulation,150,qwen,integrated_gradients_qwen,f1_at_k,0.0953
+Modulation,150,qwen,integrated_gradients_qwen,precision_at_k,0.0953
+Modulation,150,qwen,integrated_gradients_qwen,recall_at_k,0.0953
+Omission,61,qwen,integrated_gradients_qwen,auprc,0.0933
+Omission,61,qwen,integrated_gradients_qwen,f1_at_k,0.0813
+Omission,61,qwen,integrated_gradients_qwen,precision_at_k,0.0813
+Omission,61,qwen,integrated_gradients_qwen,recall_at_k,0.0813
+Synonymy,215,qwen,integrated_gradients_qwen,auprc,0.1016
+Synonymy,215,qwen,integrated_gradients_qwen,f1_at_k,0.1005
+Synonymy,215,qwen,integrated_gradients_qwen,precision_at_k,0.1005
+Synonymy,215,qwen,integrated_gradients_qwen,recall_at_k,0.1005
+Syntactic Change,80,qwen,integrated_gradients_qwen,auprc,0.1052
+Syntactic Change,80,qwen,integrated_gradients_qwen,f1_at_k,0.0818
+Syntactic Change,80,qwen,integrated_gradients_qwen,precision_at_k,0.0818
+Syntactic Change,80,qwen,integrated_gradients_qwen,recall_at_k,0.0818
+Compression,87,xlmr,attnlrp,auprc,0.3207
+Compression,87,xlmr,attnlrp,f1_at_k,0.2998
+Compression,87,xlmr,attnlrp,precision_at_k,0.2998
+Compression,87,xlmr,attnlrp,recall_at_k,0.2998
+Explanation,79,xlmr,attnlrp,auprc,0.3768
+Explanation,79,xlmr,attnlrp,f1_at_k,0.3281
+Explanation,79,xlmr,attnlrp,precision_at_k,0.3281
+Explanation,79,xlmr,attnlrp,recall_at_k,0.3281
+Modulation,150,xlmr,attnlrp,auprc,0.3361
+Modulation,150,xlmr,attnlrp,f1_at_k,0.2889
+Modulation,150,xlmr,attnlrp,precision_at_k,0.2889
+Modulation,150,xlmr,attnlrp,recall_at_k,0.2889
+Omission,61,xlmr,attnlrp,auprc,0.3453
+Omission,61,xlmr,attnlrp,f1_at_k,0.3082
+Omission,61,xlmr,attnlrp,precision_at_k,0.3082
+Omission,61,xlmr,attnlrp,recall_at_k,0.3082
+Synonymy,215,xlmr,attnlrp,auprc,0.317
+Synonymy,215,xlmr,attnlrp,f1_at_k,0.2706
+Synonymy,215,xlmr,attnlrp,precision_at_k,0.2706
+Synonymy,215,xlmr,attnlrp,recall_at_k,0.2706
+Syntactic Change,80,xlmr,attnlrp,auprc,0.3311
+Syntactic Change,80,xlmr,attnlrp,f1_at_k,0.3
+Syntactic Change,80,xlmr,attnlrp,precision_at_k,0.3
+Syntactic Change,80,xlmr,attnlrp,recall_at_k,0.3
+Compression,87,xlmr,gradient_shap,auprc,0.2484
+Compression,87,xlmr,gradient_shap,f1_at_k,0.207
+Compression,87,xlmr,gradient_shap,precision_at_k,0.207
+Compression,87,xlmr,gradient_shap,recall_at_k,0.207
+Explanation,79,xlmr,gradient_shap,auprc,0.3061
+Explanation,79,xlmr,gradient_shap,f1_at_k,0.2562
+Explanation,79,xlmr,gradient_shap,precision_at_k,0.2562
+Explanation,79,xlmr,gradient_shap,recall_at_k,0.2562
+Modulation,150,xlmr,gradient_shap,auprc,0.2858
+Modulation,150,xlmr,gradient_shap,f1_at_k,0.2447
+Modulation,150,xlmr,gradient_shap,precision_at_k,0.2447
+Modulation,150,xlmr,gradient_shap,recall_at_k,0.2447
+Omission,61,xlmr,gradient_shap,auprc,0.2649
+Omission,61,xlmr,gradient_shap,f1_at_k,0.2237
+Omission,61,xlmr,gradient_shap,precision_at_k,0.2237
+Omission,61,xlmr,gradient_shap,recall_at_k,0.2237
+Synonymy,215,xlmr,gradient_shap,auprc,0.2597
+Synonymy,215,xlmr,gradient_shap,f1_at_k,0.2143
+Synonymy,215,xlmr,gradient_shap,precision_at_k,0.2143
+Synonymy,215,xlmr,gradient_shap,recall_at_k,0.2143
+Syntactic Change,80,xlmr,gradient_shap,auprc,0.2671
+Syntactic Change,80,xlmr,gradient_shap,f1_at_k,0.2286
+Syntactic Change,80,xlmr,gradient_shap,precision_at_k,0.2286
+Syntactic Change,80,xlmr,gradient_shap,recall_at_k,0.2286
+Compression,87,xlmr,integrated_gradients,auprc,0.2503
+Compression,87,xlmr,integrated_gradients,f1_at_k,0.2109
+Compression,87,xlmr,integrated_gradients,precision_at_k,0.2109
+Compression,87,xlmr,integrated_gradients,recall_at_k,0.2109
+Explanation,79,xlmr,integrated_gradients,auprc,0.294
+Explanation,79,xlmr,integrated_gradients,f1_at_k,0.2574
+Explanation,79,xlmr,integrated_gradients,precision_at_k,0.2574
+Explanation,79,xlmr,integrated_gradients,recall_at_k,0.2574
+Modulation,150,xlmr,integrated_gradients,auprc,0.2825
+Modulation,150,xlmr,integrated_gradients,f1_at_k,0.2415
+Modulation,150,xlmr,integrated_gradients,precision_at_k,0.2415
+Modulation,150,xlmr,integrated_gradients,recall_at_k,0.2415
+Omission,61,xlmr,integrated_gradients,auprc,0.2618
+Omission,61,xlmr,integrated_gradients,f1_at_k,0.2136
+Omission,61,xlmr,integrated_gradients,precision_at_k,0.2136
+Omission,61,xlmr,integrated_gradients,recall_at_k,0.2136
+Synonymy,215,xlmr,integrated_gradients,auprc,0.2597
+Synonymy,215,xlmr,integrated_gradients,f1_at_k,0.2151
+Synonymy,215,xlmr,integrated_gradients,precision_at_k,0.2151
+Synonymy,215,xlmr,integrated_gradients,recall_at_k,0.2151
+Syntactic Change,80,xlmr,integrated_gradients,auprc,0.2665
+Syntactic Change,80,xlmr,integrated_gradients,f1_at_k,0.2231
+Syntactic Change,80,xlmr,integrated_gradients,precision_at_k,0.2231
+Syntactic Change,80,xlmr,integrated_gradients,recall_at_k,0.2231
+Compression,87,xlmr,raw_attention,auprc,0.218
+Compression,87,xlmr,raw_attention,f1_at_k,0.182
+Compression,87,xlmr,raw_attention,precision_at_k,0.182
+Compression,87,xlmr,raw_attention,recall_at_k,0.182
+Explanation,79,xlmr,raw_attention,auprc,0.2745
+Explanation,79,xlmr,raw_attention,f1_at_k,0.2351
+Explanation,79,xlmr,raw_attention,precision_at_k,0.2351
+Explanation,79,xlmr,raw_attention,recall_at_k,0.2351
+Modulation,150,xlmr,raw_attention,auprc,0.2369
+Modulation,150,xlmr,raw_attention,f1_at_k,0.2003
+Modulation,150,xlmr,raw_attention,precision_at_k,0.2003
+Modulation,150,xlmr,raw_attention,recall_at_k,0.2003
+Omission,61,xlmr,raw_attention,auprc,0.2332
+Omission,61,xlmr,raw_attention,f1_at_k,0.2066
+Omission,61,xlmr,raw_attention,precision_at_k,0.2066
+Omission,61,xlmr,raw_attention,recall_at_k,0.2066
+Synonymy,215,xlmr,raw_attention,auprc,0.225
+Synonymy,215,xlmr,raw_attention,f1_at_k,0.1829
+Synonymy,215,xlmr,raw_attention,precision_at_k,0.1829
+Synonymy,215,xlmr,raw_attention,recall_at_k,0.1829
+Syntactic Change,80,xlmr,raw_attention,auprc,0.2345
+Syntactic Change,80,xlmr,raw_attention,f1_at_k,0.1942
+Syntactic Change,80,xlmr,raw_attention,precision_at_k,0.1942
+Syntactic Change,80,xlmr,raw_attention,recall_at_k,0.1942
