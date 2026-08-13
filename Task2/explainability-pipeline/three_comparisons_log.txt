@@ -1,0 +1,83 @@
+======================================================================
+1. METHOD COMPARISON (best explainer WITHIN each model)
+======================================================================
+
+E5:
+  attnlrp                        Precision@K = 0.2754 <- BEST
+  raw_attention                  Precision@K = 0.2147
+  gradient_shap                  Precision@K = 0.2143
+  integrated_gradients           Precision@K = 0.2142
+  Margin over next-best: 0.0607
+
+MBERT:
+  raw_attention                  Precision@K = 0.2387 <- BEST
+  gradient_shap                  Precision@K = 0.2321
+  integrated_gradients           Precision@K = 0.2320
+  Margin over next-best: 0.0066
+
+QWEN:
+  integrated_gradients_qwen      Precision@K = 0.0945 <- BEST
+
+XLMR:
+  attnlrp                        Precision@K = 0.2912 <- BEST
+  gradient_shap                  Precision@K = 0.2271
+  integrated_gradients           Precision@K = 0.2255
+  raw_attention                  Precision@K = 0.1952
+  Margin over next-best: 0.0641
+
+======================================================================
+2. MODEL COMPARISON (best model under a SHARED, comparable method)
+======================================================================
+
+Under attnlrp (models that actually share this method: ['xlmr', 'e5']):
+  xlmr       Precision@K = 0.2912 <- BEST
+  e5         Precision@K = 0.2754
+  Margin over next-best: 0.0158
+
+Under gradient_shap (models that actually share this method: ['mbert', 'xlmr', 'e5']):
+  mbert      Precision@K = 0.2321 <- BEST
+  xlmr       Precision@K = 0.2271
+  e5         Precision@K = 0.2143
+  Margin over next-best: 0.0050
+
+Under integrated_gradients (models that actually share this method: ['mbert', 'xlmr', 'e5']):
+  mbert      Precision@K = 0.2320 <- BEST
+  xlmr       Precision@K = 0.2255
+  e5         Precision@K = 0.2142
+  Margin over next-best: 0.0065
+
+integrated_gradients_qwen: only 1 model has this method -- no comparison possible
+
+Under raw_attention (models that actually share this method: ['mbert', 'e5', 'xlmr']):
+  mbert      Precision@K = 0.2387 <- BEST
+  e5         Precision@K = 0.2147
+  xlmr       Precision@K = 0.1952
+  Margin over next-best: 0.0240
+
+======================================================================
+3. STRATEGY COMPARISON (best model+method combination per strategy)
+======================================================================
+
+Compression:
+  BEST: xlmr/attnlrp = 0.2998
+  Next-best: e5/attnlrp = 0.2764 (margin: 0.0234)
+
+Explanation:
+  BEST: xlmr/attnlrp = 0.3281
+  Next-best: e5/attnlrp = 0.2886 (margin: 0.0395)
+
+Modulation:
+  BEST: xlmr/attnlrp = 0.2889
+  Next-best: e5/attnlrp = 0.2772 (margin: 0.0117)
+
+Omission:
+  BEST: xlmr/attnlrp = 0.3082
+  Next-best: e5/attnlrp = 0.2602 (margin: 0.0480)
+
+Synonymy:
+  BEST: xlmr/attnlrp = 0.2706
+  Next-best: e5/attnlrp = 0.2676 (margin: 0.0030)
+
+Syntactic Change:
+  BEST: xlmr/attnlrp = 0.3000
+  Next-best: e5/attnlrp = 0.2980 (margin: 0.0020)
