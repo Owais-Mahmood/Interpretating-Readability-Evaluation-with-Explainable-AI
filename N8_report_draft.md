@@ -336,6 +336,50 @@ Given the substantial redesign required to adapt any explainability method to Qw
 
 Taken together, the project demonstrates that explainability methods can meaningfully be compared across genuinely different model architectures, that the choice of method matters (AttnLRP's advantage being the clearest evidence of this), and that doing this kind of comparison properly surfaces real, non-obvious findings, rather than confirming an assumption made in advance.
 
+## Appendix: Qualitative Strategy-Level Analysis (Item 7)
+
+For every strategy, the real highest- and lowest-scoring example (by AttnLRP Precision@K, on XLM-R) was selected automatically from the full 281-pair test set, rather than hand-picked. Token lists show each method's top-K highlighted tokens, where K matches the number of real gold tokens used in evaluation (minimum 3). Subword tokens are shown as produced by the tokenizer (▁ marks a word start; `<s>`/`</s>` are special tokens).
+
+### Synonymy
+
+**Successful** (Spanish, confidence 0.618): Source: *"Como publicó El Periódico de España, Aliste y Villarejo se conocen desde hace décadas y el abogado aparece en las agendas del comisario."* Gold deletion spans include "Como" and "y el abogado aparece en las agendas del comisario"; gold insertion spans include "que José" and "relación". AttnLRP's top tokens (*Como, aparece, agenda*) directly match two of the gold deletion tokens. GradientSHAP and Integrated Gradients both correctly surface "relación" (matching the gold insertion span) but waste two of their limited K slots on non-content special tokens (`</s>`). Raw Attention captures only "relación" and otherwise highlights structural tokens (`<s>`, punctuation) with no clear connection to the edit.
+
+**Unsuccessful** (Arabic, confidence 0.477, near the decision threshold): The gold spans here are six separate, scattered single-word deletions spread across a long, syntactically complex sentence, with no insertion spans. None of the four methods' top tokens meaningfully overlap with any gold span; all four converge instead on the word "العمال" ("the workers") and punctuation. This is a case where the underlying edit signal is diffuse rather than concentrated, likely because the strategy involves many small changes rather than one dominant token, making it genuinely hard for any attribution method to localise well.
+
+### Modulation
+
+**Successful** (Italian, confidence 0.471): Source: *"La sintesi è questa: la natura esiste da molto prima di noi."* The entire gold edit is a single deleted word, "è". AttnLRP's single top-ranked token is exactly "è" -- a precise match. GradientSHAP and Integrated Gradients both miss it, instead highlighting unrelated content words ("natura", "sintesi"). Raw Attention highlights only structural tokens. This is the cleanest possible illustration of AttnLRP's advantage: a single-token gold edit, correctly identified as the single most important token, while the other three methods look elsewhere entirely.
+
+**Unsuccessful** (Catalan, confidence 0.470): A long, heavily restructured sentence with four deletion spans and three insertion spans scattered throughout. AttnLRP's top tokens ("fitxar", "Llei", "contract", "estranger") show partial thematic relevance (the sentence is about football transfers) but do not precisely match the specific gold spans. All four methods struggle similarly here, reflecting the genuine difficulty of localising a broad rewording rather than a single substitution.
+
+### Compression
+
+**Successful** (Italian, confidence 0.700, the highest confidence among all twelve examples): A long sentence with seven deletion spans and five insertion spans. AttnLRP's top tokens directly include "che" and "ne" (exact deletion matches), "è"/"È" (exact insertion match), and "forse", "meno", "turisti" (an exact three-token run matching the gold insertion span "forse meno turisti"). This is a strong, precise match across nearly half of AttnLRP's twelve allotted tokens. GradientSHAP and Integrated Gradients each capture only "turisti" among the content words, spending the remainder of their budget on punctuation and special tokens. Raw Attention shows no meaningful overlap.
+
+**Unsuccessful** (Arabic, confidence 0.605): Gold deletion spans are three short phrases, with no insertions. AttnLRP's top tokens include "ضعف", part of the deleted phrase "بكل ضعف" -- a partial match -- while GradientSHAP, Integrated Gradients, and Raw Attention show no overlap with the gold spans at all, each highlighting only punctuation or a single unrelated token.
+
+### Explanation
+
+**Successful** (English, confidence 0.515): Source: *"make sure that we recognise and value the care workforce and unpaid carers"*. Gold deletion spans include "we recognise and" and "care"; gold insertion spans include "feel". AttnLRP's top tokens include "we", "and", and "care" (appearing twice, matching both "care" occurrences in the source and simplified text) -- a good overlap with the deletion spans. GradientSHAP correctly identifies "feel" (the inserted word) and "value", while Integrated Gradients and Raw Attention show weaker, more scattered overlap.
+
+**Unsuccessful** (French, confidence 0.538): Source: *"Faire un CV et le modifier seul"*, simplified to *"Faire un CV et le mettre à jour"*. The entire gold edit is a single inserted word, "à". Here AttnLRP's top tokens ("un", "un", "jour") miss the gold token entirely, despite "jour" being adjacent to it. Integrated Gradients is the only method that correctly includes "à" among its top three tokens, alongside "modifier" and "seul" (both deleted words, also plausible content). This is a genuine, honest counter-example: AttnLRP does not win on every individual case, even though it wins in aggregate across the full test set (Section 8.1) -- a useful reminder that the overall comparison describes an average tendency, not a guarantee on any single example.
+
+### Syntactic Change
+
+**Successful** (English, confidence 0.479): A long sentence about the aviation industry, extensively restructured with five deletion spans and two insertion spans ("many people", "travel"). AttnLRP's top tokens directly include "air" and "travel" (an exact insertion match) and "on" (part of the deleted "impact on route networks"). GradientSHAP and Integrated Gradients both correctly find "pande[mic]" (contextually relevant, though not itself a gold span token) but otherwise show weaker overlap. Raw Attention shows minimal overlap.
+
+**Unsuccessful** (Catalan, confidence 0.499): Source has no deletions, only two short gold insertion spans ("pares o" and "o filles"). GradientSHAP is the method that correctly captures "filles" among its top three tokens, while AttnLRP's top tokens ("geni", "la", "la") miss both gold spans entirely. Integrated Gradients and Raw Attention also show no meaningful overlap. This is a second honest counter-example, on a strategy where the overall comparison (Section 8.2) already showed a genuinely mixed result between XLM-R and mBERT rather than a uniform advantage for either.
+
+### Omission
+
+**Successful** (Italian, confidence 0.496): The longest and most heavily edited example in this set, with eight deletion spans and ten insertion spans. AttnLRP's top tokens (necessarily eighteen, matching the large number of gold tokens) include direct matches to "merci" and "dei" (deletions) and a precise four-token run, "Noi", "ri", "spon", "diamo" (matching the deconstructed gold insertion "Noi rispondiamo con"), plus partial matches on "tas"/"se" fragments of "tasse". GradientSHAP shows a different but also reasonable partial overlap ("degli", "Stati", "Uniti", matching a separate insertion span). This example illustrates that with a large enough gold span budget, multiple methods can find genuine, if different, points of overlap.
+
+**Unsuccessful** (Arabic, confidence 0.653, the highest confidence among all twelve unsuccessful examples): The entire gold edit is a single deleted word ("مشهد", "scene") and a single inserted word ("وهذا", "and this"). None of the four methods' top three tokens include either gold word; all four instead highlight unrelated content or punctuation. Despite the model's high confidence in its prediction, none of the explainability methods correctly localised this particular single-word edit, illustrating that high predictive confidence does not guarantee an easily localisable explanation.
+
+### Summary
+
+Across these twelve real examples, AttnLRP shows the clearest, most precise overlap with gold spans in the majority of cases, consistent with its overall advantage (Section 8.1). However, two genuine counter-examples -- Explanation (French) and Syntactic Change (Catalan) -- show Integrated Gradients and GradientSHAP respectively outperforming AttnLRP on that specific instance. This is an honest, expected property of an average-case comparison: no method wins universally on every individual example, and the strategies where the overall model comparison was already mixed (Modulation, Explanation; Section 8.2) show the same mixed pattern here at the level of individual examples.
+
 ## References
 
 Achtibat, R., Hatefi, S. M. V., Dreyer, M., Jain, A., Wiegand, T., Lapuschkin, S., & Samek, W. (2024). AttnLRP: Attention-Aware Layer-Wise Relevance Propagation for Transformers. *Proceedings of the 41st International Conference on Machine Learning*, PMLR volume 235, pages 135-168.
