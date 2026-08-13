@@ -39,7 +39,7 @@ def find_token_range_for_span(offsets: list[tuple[int, int]], char_start: int, c
 
 
 def main():
-    results_df = pd.read_csv("outputs/explanations/qwen_ig_sample_results.csv")
+    results_df = pd.read_csv("outputs/explanations/qwen_ig_full_results.csv")
     print(f"Loaded {len(results_df)} raw Qwen explanations.")
 
     dataset = SimplificationDatasetAdapter("data/raw/test_set_full_with_spans.csv")
@@ -179,7 +179,7 @@ def main():
     print(f"Produced {len(records)} metric records.")
 
     results = pd.DataFrame(records)
-    output_path = Path("outputs/metrics/qwen_plausibility_results.csv")
+    output_path = Path("outputs/metrics/qwen_plausibility_full_results.csv")
     output_path.parent.mkdir(parents=True, exist_ok=True)
     results.to_csv(output_path, index=False)
     print(f"Saved to {output_path}")
