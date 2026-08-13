@@ -1,0 +1,25 @@
+=== AttnLRP margin over next-best method, per model ===
+xlmr: AttnLRP precision_at_k = 0.2912, next-best (gradient_shap) = 0.2271, margin = 0.0641
+xlmr: AttnLRP auprc = 0.3312, next-best (gradient_shap) = 0.2699, margin = 0.0613
+e5: AttnLRP precision_at_k = 0.2754, next-best (raw_attention) = 0.2147, margin = 0.0607
+e5: AttnLRP auprc = 0.3099, next-best (raw_attention) = 0.2682, margin = 0.0417
+
+=== mBERT spread across its 3 methods (no AttnLRP available) ===
+mbert precision_at_k: best (raw_attention) = 0.2387, next-best (gradient_shap) = 0.2321, margin = 0.0066
+mbert auprc: best (gradient_shap) = 0.2621, next-best (raw_attention) = 0.2620, margin = 0.0002
+
+=== Under Integrated Gradients specifically: which model wins on which metric? ===
+
+precision_at_k under Integrated Gradients:
+  mbert: 0.2320
+  xlmr: 0.2255
+  e5: 0.2142
+
+auprc under Integrated Gradients:
+  xlmr: 0.2680
+  mbert: 0.2616
+  e5: 0.2497
+
+=== AttnLRP: XLM-R vs E5 specifically ===
+precision_at_k: XLM-R = 0.2912, E5 = 0.2754, XLM-R higher by 0.0158
+auprc: XLM-R = 0.3312, E5 = 0.3099, XLM-R higher by 0.0213
